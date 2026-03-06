@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-cyan: #00f5ff;
+    --primary-pink: #ff00ff;
+    --dark-bg: #0a0a0f;
+    --dark-surface: #12121a;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-[#0a0a0f] text-white antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#00f5ff] to-[#ff00ff];
+  }
+
+  .gradient-text-animated {
+    background: linear-gradient(
+      90deg,
+      #00f5ff 0%,
+      #ff00ff 25%,
+      #00f5ff 50%,
+      #ff00ff 75%,
+      #00f5ff 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 4s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% center;
+    }
+    50% {
+      background-position: 100% center;
+    }
+  }
+
+  /* Glassmorphism */
+  .glass {
+    @apply bg-white/5 backdrop-blur-[10px] border border-white/[0.08];
+  }
+
+  .glass-card {
+    @apply bg-[#12121a]/80 backdrop-blur-md border border-white/[0.08];
+  }
+
+  /* Glow Effects */
+  .glow-hover {
+    @apply transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,245,255,0.3)];
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#0a0a0f];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-800 rounded-full border-2 border-[#0a0a0f];
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-700;
+}

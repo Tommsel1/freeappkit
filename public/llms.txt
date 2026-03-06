@@ -1,0 +1,59 @@
+# FreeAppKit – 24 Free Online Web Tools
+
+> FreeAppKit is a free collection of 24 beautiful, production-ready web application templates built with React and Tailwind CSS. No signup required, fully customizable, one-click copy to Hostinger Horizons.
+
+## About
+FreeAppKit provides free, open-source web tools for productivity, health, finance, and fun. Every template is mobile-responsive, GDPR-compliant, and ready to deploy. Based in Sankt Augustin, Germany.
+
+## Template Categories (24 Total)
+
+### Productivity (3)
+- Gradient Pomodoro Timer – Focus timer with animated gradients and session tracking
+- Year Progress Bar – Visualize how much of the year has passed
+- Habit Streak Tracker – Track habits with a GitHub-style contribution graph
+
+### Health & Wellness (7)
+- Breathing Circle – Calming breathing exercise with pulsing animations
+- Emoji Mood Tracker – Track daily mood with emojis and calendar view
+- Water Intake Tracker – Stay hydrated with tracking animations
+- Sleep Calculator – Calculate optimal bedtimes based on sleep cycles
+- Ambient Sound Mixer – Mix relaxing sounds for focus and meditation
+- BMI Calculator – Calculate BMI with visual health indicators
+- Carbon Footprint Calculator – Calculate CO2 footprint, see how many Earths needed
+
+### Finance (4)
+- Tip Calculator – Calculate tips and split bills
+- Compound Interest Calculator – Visualize investment growth with charts
+- Mortgage Calculator – Loan payments with amortization charts
+- Salary Calculator – Net salary with tax breakdowns for Germany and USA
+
+### Fun & Games (5)
+- Decision Spinner – Customizable spin-the-wheel tool
+- 3D Dice Roller – Realistic 3D dice animations
+- Live Age Calculator – Exact age in years, days, hours, live seconds
+- Reaction Time Test – Test and improve reaction time
+- Music Taste Visualizer – Generate shareable Music DNA cards
+
+### Design & Dev (2)
+- Color Palette Generator – Generate palettes, click to copy hex codes
+- CSS Gradient Generator – Create CSS gradients with visual editor
+
+### Tools & Utilities (3)
+- Daily Inspiration – Quotes with gradient backgrounds
+- Event Countdown Timer – Shareable countdowns for events
+- Password Generator – Secure passwords with customizable options
+
+## Pages
+- [Home](https://freeappkit.com/): Browse all 24 free web app templates
+- [About](https://freeappkit.com/about): Mission and what FreeAppKit offers
+- [FAQ](https://freeappkit.com/faq): Frequently asked questions about templates and usage
+- [How It Works](https://freeappkit.com/how-it-works): 4-step guide to using templates
+- [Affiliate Disclosure](https://freeappkit.com/affiliate-disclosure): Transparency about monetization
+- [Impressum](https://freeappkit.com/impressum): Legal notice (§ 5 DDG)
+- [Privacy Policy](https://freeappkit.com/privacy): GDPR-compliant data protection info
+
+## Tech Stack
+React, Tailwind CSS, Framer Motion, Vite, React Router
+
+## Contact
+Email: tshfm78@gmail.com
