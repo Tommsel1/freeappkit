@@ -28,6 +28,18 @@ export default {
       title: "Datenschutzerklärung – FreeAppKit",
       description: "Informationen zum Datenschutz und zur Datenerfassung auf FreeAppKit."
     },
+    terms: {
+      title: "Nutzungsbedingungen-Übersicht – FreeAppKit",
+      description: "Technische Übersicht der rechtlichen und datenschutzbezogenen Dokumente."
+    },
+    cookiePolicy: {
+      title: "Cookie-Richtlinie – FreeAppKit",
+      description: "Übersicht der Cookie-Kategorien und Einwilligungssteuerung."
+    },
+    cookiePreferences: {
+      title: "Cookie-Einstellungen – FreeAppKit",
+      description: "Cookie-Einwilligungen jederzeit verwalten und anpassen."
+    },
     legal: {
       title: "Rechtliche Informationen - FreeAppKit",
       description: "Rechtliche Hinweise zur Nutzung von FreeAppKit."
@@ -41,7 +53,11 @@ export default {
     legal: "Rechtliches",
     impressum: "Impressum",
     privacy: "Datenschutz",
+    terms: "Nutzungsbedingungen",
+    cookiePolicy: "Cookie-Richtlinie",
+    cookiePreferences: "Cookie-Einstellungen",
     cookieSettings: "Cookie-Einstellungen",
+    primaryNavigation: "Hauptnavigation",
     menu: "Menü",
     close: "Schließen"
   },
@@ -98,6 +114,7 @@ export default {
     affiliateNotice: "Hinweis: Die „Copy Template\"-Links auf dieser Seite sind Affiliate-Links (Werbung). Wenn du ein Template kopierst und Hostinger Horizons nutzt, erhalten wir eine kleine Provision – für dich entstehen keine zusätzlichen Kosten.",
     learnMore: "Mehr erfahren",
     showing: "{count} von {total} Vorlagen werden angezeigt",
+    filterAriaLabel: "Vorlagen-Kategoriefilter",
     filters: {
       all: "Alle",
       productivity: "Produktivität",
@@ -144,6 +161,9 @@ export default {
       submitTemplate: "Vorlage einreichen",
       impressum: "Impressum",
       privacy: "Datenschutz",
+      terms: "Nutzungsbedingungen",
+      cookiePolicy: "Cookie-Richtlinie",
+      cookiePreferences: "Cookie-Einstellungen",
       affiliateDisclosure: "Affiliate-Offenlegung",
       cookieSettings: "Cookie-Einstellungen"
     },
@@ -154,7 +174,7 @@ export default {
   },
   cookieBanner: {
     title: "Wir respektieren deine Privatsphäre",
-    description: "Wir verwenden Cookies, um dein Surferlebnis zu verbessern und den Website-Traffic zu analysieren.",
+    description: "Wir verwenden Cookies, um dein Surferlebnis zu verbessern. Statistik hilft uns bei der Nutzungsauswertung, Marketing ermöglicht werbebasierte Finanzierung.",
     learnMore: "Mehr erfahren",
     customize: "Anpassen",
     rejectAll: "Alle ablehnen",
@@ -168,11 +188,11 @@ export default {
       description: "Erforderlich für die Funktion der Website."
     },
     analytics: {
-      title: "Analyse-Cookies",
+      title: "Statistik-Cookies",
       description: "Helfen uns zu verstehen, wie Besucher mit unserer Website interagieren."
     },
     ads: {
-      title: "Werbe-Cookies",
+      title: "Marketing-Cookies",
       description: "Werden verwendet, um personalisierte Werbung anzuzeigen."
     },
     rejectAll: "Alle ablehnen",
@@ -434,6 +454,34 @@ export default {
     section5Text: "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren teilzunehmen.",
     lastUpdated: "Zuletzt aktualisiert: Januar 2026"
   },
+  termsPage: {
+    title: "Nutzungsbedingungen-Übersicht",
+    intro: "Diese Seite dient als technischer Einstiegspunkt zu den rechtlichen Dokumenten.",
+    scopeNote: "Die rechtlich maßgeblichen und gepflegten Texte sind auf den unten verlinkten Seiten veröffentlicht.",
+    links: {
+      impressum: "Impressum",
+      privacy: "Datenschutz",
+      affiliate: "Affiliate-Offenlegung"
+    }
+  },
+  cookiePolicyPage: {
+    title: "Cookie-Richtlinie",
+    intro: "FreeAppKit verwendet ein einwilligungsbasiertes Cookie-Modell mit drei Kategorien.",
+    items: [
+      "Notwendige Cookies: für Kernfunktionen erforderlich und immer aktiv.",
+      "Statistik-Cookies: werden erst nach Statistik-Einwilligung geladen.",
+      "Marketing-Cookies: werden erst nach Marketing-Einwilligung geladen."
+    ],
+    actions: {
+      privacy: "Datenschutzerklärung öffnen",
+      preferences: "Cookie-Einstellungen öffnen"
+    }
+  },
+  cookiePreferencesPage: {
+    title: "Cookie-Einstellungen",
+    intro: "Du kannst deine Einwilligungen jederzeit ändern. Der Einstellungsdialog sollte auf dieser Seite automatisch geöffnet werden.",
+    openButton: "Cookie-Einstellungen öffnen"
+  },
   legalPage: {
     disclaimerTitle: "Rechtlicher Hinweis",
     disclaimerText: "Alle Inhalte dienen nur zu Illustrationszwecken.",
@@ -443,6 +491,9 @@ export default {
     cookies: "Cookies",
     placeholderText: "Lorem ipsum...",
     placeholderText2: "Duis aute..."
+  },
+  accessibility: {
+    skipToContent: "Zum Hauptinhalt springen"
   },
   welcomeMessage: "Schreiben Sie in den Chat, was Sie erstellen möchten.",
   toast: {

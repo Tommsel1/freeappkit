@@ -28,6 +28,18 @@ export default {
       title: "Privacy Policy - FreeAppKit",
       description: "Privacy Policy and Data Protection Information for FreeAppKit"
     },
+    terms: {
+      title: "Terms Overview - FreeAppKit",
+      description: "Technical index of legal and policy documents for FreeAppKit."
+    },
+    cookiePolicy: {
+      title: "Cookie Policy - FreeAppKit",
+      description: "Overview of cookie categories and consent controls used on FreeAppKit."
+    },
+    cookiePreferences: {
+      title: "Cookie Preferences - FreeAppKit",
+      description: "Manage and update your cookie choices."
+    },
     legal: {
       title: "Legal Information - FreeAppKit",
       description: "Legal information for FreeAppKit"
@@ -41,7 +53,11 @@ export default {
     legal: "Legal",
     impressum: "Impressum",
     privacy: "Privacy Policy",
+    terms: "Terms",
+    cookiePolicy: "Cookie Policy",
+    cookiePreferences: "Cookie Preferences",
     cookieSettings: "Cookie Settings",
+    primaryNavigation: "Primary navigation",
     menu: "Menu",
     close: "Close"
   },
@@ -98,6 +114,7 @@ export default {
     affiliateNotice: "Note: The \"Copy Template\" links on this page are affiliate links (Advertising). If you copy a template and use Hostinger Horizons, we receive a small commission – at no additional cost to you.",
     learnMore: "Learn more",
     showing: "Showing {count} of {total} templates",
+    filterAriaLabel: "Template category filters",
     filters: {
       all: "All",
       productivity: "Productivity",
@@ -144,6 +161,9 @@ export default {
       submitTemplate: "Submit Template",
       impressum: "Impressum",
       privacy: "Privacy Policy",
+      terms: "Terms",
+      cookiePolicy: "Cookie Policy",
+      cookiePreferences: "Cookie Preferences",
       affiliateDisclosure: "Affiliate Disclosure",
       cookieSettings: "Cookie Settings"
     },
@@ -154,7 +174,7 @@ export default {
   },
   cookieBanner: {
     title: "We value your privacy",
-    description: "We use cookies to enhance your experience. We use analytics to understand how you use our site and ads to keep FreeAppKit free.",
+    description: "We use cookies to enhance your experience. Statistics help us understand usage, and marketing supports ad-based monetization.",
     learnMore: "Learn more",
     customize: "Customize",
     rejectAll: "Reject All",
@@ -168,11 +188,11 @@ export default {
       description: "Required for the website to function properly. These cannot be disabled."
     },
     analytics: {
-      title: "Analytics Cookies",
+      title: "Statistics Cookies",
       description: "Help us understand how visitors use our website via Google Analytics."
     },
     ads: {
-      title: "Advertising Cookies",
+      title: "Marketing Cookies",
       description: "Used to display personalized advertisements via Google AdSense."
     },
     rejectAll: "Reject All",
@@ -434,6 +454,34 @@ export default {
     section5Text: "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
     lastUpdated: "Last updated: January 2026"
   },
+  termsPage: {
+    title: "Terms Overview",
+    intro: "This page is a technical entry point to our legal documents.",
+    scopeNote: "The legally relevant and maintained texts are published on the linked pages below.",
+    links: {
+      impressum: "Impressum",
+      privacy: "Privacy Policy",
+      affiliate: "Affiliate Disclosure"
+    }
+  },
+  cookiePolicyPage: {
+    title: "Cookie Policy",
+    intro: "FreeAppKit uses a consent-based cookie model with three categories.",
+    items: [
+      "Necessary cookies: required for core functionality and always active.",
+      "Statistics cookies: loaded only after statistics consent.",
+      "Marketing cookies: loaded only after marketing consent."
+    ],
+    actions: {
+      privacy: "Open privacy policy",
+      preferences: "Open cookie preferences"
+    }
+  },
+  cookiePreferencesPage: {
+    title: "Cookie Preferences",
+    intro: "You can update your consent at any time. The settings dialog should open automatically on this page.",
+    openButton: "Open cookie settings"
+  },
   legalPage: {
     disclaimerTitle: "Legal Disclaimer",
     disclaimerText: "This website is a demonstration project. All content is for illustrative purposes only.",
@@ -443,6 +491,9 @@ export default {
     cookies: "Cookies",
     placeholderText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     placeholderText2: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  accessibility: {
+    skipToContent: "Skip to main content"
   },
   welcomeMessage: "Write in the chat what you want to create.",
   toast: {

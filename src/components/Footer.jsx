@@ -23,8 +23,8 @@ const Footer = () => {
     }
   };
 
-  const handleCookieSettings = () => {
-    openModal();
+  const handleCookieSettings = (event) => {
+    openModal(event.currentTarget);
   };
 
   const handleSubmitTemplate = (e) => {
@@ -59,7 +59,7 @@ const Footer = () => {
                 <a 
                   href="#templates" 
                   onClick={(e) => handleSmoothScroll(e, '#templates')}
-                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm"
+                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05050a] rounded-sm"
                 >
                   {t('footer.links.allTemplates')}
                 </a>
@@ -67,7 +67,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/about"
-                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm"
+                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05050a] rounded-sm"
                 >
                   {t('footer.links.about')}
                 </Link>
@@ -75,7 +75,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/faq"
-                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm"
+                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05050a] rounded-sm"
                 >
                   {t('footer.links.faq')}
                 </Link>
@@ -83,19 +83,19 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/how-it-works"
-                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm"
+                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05050a] rounded-sm"
                 >
                   {t('footer.links.howItWorks')}
                 </Link>
               </li>
               <li>
-                <a 
-                  href="#" 
+                <button
+                  type="button"
                   onClick={handleSubmitTemplate}
-                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm"
+                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05050a] rounded-sm text-left"
                 >
                   {t('footer.links.submitTemplate')}
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -107,7 +107,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/impressum" 
-                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm"
+                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05050a] rounded-sm"
                 >
                   {t('footer.links.impressum')}
                 </Link>
@@ -115,7 +115,7 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/privacy" 
-                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm"
+                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05050a] rounded-sm"
                 >
                   {t('footer.links.privacy')}
                 </Link>
@@ -123,15 +123,40 @@ const Footer = () => {
               <li>
                 <Link 
                   to="/affiliate-disclosure" 
-                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm"
+                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05050a] rounded-sm"
                 >
                   {t('footer.links.affiliateDisclosure')}
                 </Link>
               </li>
               <li>
-                <button 
+                <Link
+                  to="/terms"
+                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05050a] rounded-sm"
+                >
+                  {t('footer.links.terms')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/cookie-policy"
+                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05050a] rounded-sm"
+                >
+                  {t('footer.links.cookiePolicy')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/cookie-preferences"
+                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05050a] rounded-sm"
+                >
+                  {t('footer.links.cookiePreferences')}
+                </Link>
+              </li>
+              <li>
+                <button
+                  type="button"
                   onClick={handleCookieSettings}
-                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm text-left"
+                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05050a] rounded-sm"
                 >
                   {t('footer.links.cookieSettings')}
                 </button>
@@ -153,7 +178,7 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-2 text-sm text-gray-500">
             <span>{t('footer.madeWith')}</span>
-            <Heart className="text-red-500 fill-red-500" size={14} />
+            <Heart aria-hidden="true" className="text-red-500 fill-red-500" size={14} />
             <span>{t('footer.inGermany')}</span>
           </div>
         </div>

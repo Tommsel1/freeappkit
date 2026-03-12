@@ -38,7 +38,7 @@ const AffiliateDisclosurePage = () => {
       
       <Header />
       
-      <main className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+      <main id="main-content" tabIndex={-1} className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

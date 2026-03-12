@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useCookie } from '@/context/CookieContext';
+import { isAdRenderingAllowed } from '@/lib/sitePolicy';
 
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX';
-const ADSENSE_CLIENT = 'ca-pub-4653533937550770';
+const ADSENSE_CLIENT = import.meta.env.VITE_ADSENSE_CLIENT || 'ca-pub-4653533937550770';
+const ENABLE_ADSENSE = import.meta.env.VITE_ENABLE_ADSENSE === 'true';
 
 const getGtag = () => {
   window.dataLayer = window.dataLayer || [];
@@ -14,8 +17,16 @@ const getGtag = () => {
   return window.gtag;
 };
 
+const removeScriptBySelector = (selector) => {
+  const script = document.querySelector(selector);
+  if (script) {
+    script.remove();
+  }
+};
+
 const GoogleScripts = () => {
   const { consentGiven, preferences } = useCookie();
+  const location = useLocation();
 
   useEffect(() => {
     const gtag = getGtag();
@@ -37,15 +48,21 @@ const GoogleScripts = () => {
 
     const gtag = getGtag();
     gtag('consent', 'update', {
-      ad_storage: preferences.ads ? 'granted' : 'denied',
-      ad_user_data: preferences.ads ? 'granted' : 'denied',
-      ad_personalization: preferences.ads ? 'granted' : 'denied',
-      analytics_storage: preferences.analytics ? 'granted' : 'denied',
+      ad_storage: preferences.marketing ? 'granted' : 'denied',
+      ad_user_data: preferences.marketing ? 'granted' : 'denied',
+      ad_personalization: preferences.marketing ? 'granted' : 'denied',
+      analytics_storage: preferences.statistics ? 'granted' : 'denied',
+    });
+
+    const analyticsEnabled = preferences.statistics && GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX';
+    const adRenderingAllowed = isAdRenderingAllowed({
+      pathname: location.pathname,
+      hasMarketingConsent: preferences.marketing,
+      isAdSenseEnabled: ENABLE_ADSENSE,
     });
 
     if (
-      preferences.analytics &&
-      GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX' &&
+      analyticsEnabled &&
       !document.querySelector('script[data-ga-script="true"]')
     ) {
       const gaScript = document.createElement('script');
@@ -53,12 +70,20 @@ const GoogleScripts = () => {
       gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
       gaScript.dataset.gaScript = 'true';
       document.head.appendChild(gaScript);
-
-      gtag('js', new Date());
-      gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
     }
 
-    if (preferences.ads && !document.querySelector('script[data-adsense-script="true"]')) {
+    if (analyticsEnabled && !window.__freeappkitGaConfigured) {
+      gtag('js', new Date());
+      gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+      window.__freeappkitGaConfigured = true;
+    }
+
+    if (!analyticsEnabled) {
+      removeScriptBySelector('script[data-ga-script="true"]');
+      window.__freeappkitGaConfigured = false;
+    }
+
+    if (adRenderingAllowed && !document.querySelector('script[data-adsense-script="true"]')) {
       const adSenseScript = document.createElement('script');
       adSenseScript.async = true;
       adSenseScript.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`;
@@ -66,7 +91,11 @@ const GoogleScripts = () => {
       adSenseScript.dataset.adsenseScript = 'true';
       document.head.appendChild(adSenseScript);
     }
-  }, [consentGiven, preferences]);
+
+    if (!adRenderingAllowed) {
+      removeScriptBySelector('script[data-adsense-script="true"]');
+    }
+  }, [consentGiven, preferences, location.pathname]);
 
   return null;
 };

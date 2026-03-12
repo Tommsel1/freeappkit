@@ -1,1 +1,3 @@
+# FreeAppKit AdSense publisher declaration.
+# Ads are technically gated by marketing consent and VITE_ENABLE_ADSENSE.
 google.com, pub-4653533937550770, DIRECT, f08c47fec0942fa0

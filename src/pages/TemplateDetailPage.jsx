@@ -22,7 +22,7 @@ const TemplateDetailPage = () => {
           noindex
         />
         <Header />
-        <main className="flex-grow pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <main id="main-content" tabIndex={-1} className="flex-grow pt-24 pb-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">{t('templatePage.notFoundHeading')}</h1>
             <p className="text-gray-400 mb-8">{t('templatePage.notFoundDescription')}</p>
@@ -53,7 +53,7 @@ const TemplateDetailPage = () => {
 
       <Header />
 
-      <main className="flex-grow pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <main id="main-content" tabIndex={-1} className="flex-grow pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <Link
             to="/"

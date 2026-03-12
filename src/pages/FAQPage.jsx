@@ -6,26 +6,37 @@ import Footer from '@/components/Footer';
 import SeoHead from '@/components/SeoHead';
 import { useLanguage } from '@/context/LanguageContext';
 
-const FAQItem = ({ question, answer, isOpen, onClick }) => {
+const FAQItem = ({ question, answer, isOpen, onClick, id }) => {
+  const buttonId = `${id}-button`;
+  const panelId = `${id}-panel`;
+
   return (
     <motion.div 
       initial={false}
       className={`border border-white/10 rounded-xl overflow-hidden bg-[#12121a] transition-colors duration-300 ${isOpen ? 'border-cyan-500/30' : 'hover:border-white/20'}`}
     >
       <button
+        type="button"
+        id={buttonId}
+        aria-expanded={isOpen}
+        aria-controls={panelId}
         onClick={onClick}
-        className="w-full px-6 py-5 flex items-center justify-between text-left group"
+        className="w-full px-6 py-5 flex items-center justify-between text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-inset"
       >
         <span className={`text-lg font-medium transition-colors duration-300 ${isOpen ? 'text-cyan-400' : 'text-gray-200 group-hover:text-white'}`}>
           {question}
         </span>
         <ChevronDown 
+          aria-hidden="true"
           className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-cyan-400' : 'group-hover:text-white'}`} 
         />
       </button>
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id={panelId}
+            role="region"
+            aria-labelledby={buttonId}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -106,7 +117,7 @@ const FAQPage = () => {
       
       <Header />
       
-      <main className="pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+      <main id="main-content" tabIndex={-1} className="pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -135,6 +146,7 @@ const FAQPage = () => {
           {faqs.map((faq, index) => (
             <FAQItem
               key={index}
+              id={`faq-item-${index}`}
               question={faq.question}
               answer={faq.answer}
               isOpen={openIndex === index}

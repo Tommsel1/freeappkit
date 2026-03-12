@@ -31,7 +31,7 @@ const TemplateCard = ({ slug, name, description, tags, iframeUrl, badge }) => {
       <div className="relative h-[400px] w-full bg-[#0a0a0f] border-b border-white/5 overflow-hidden">
         <iframe
           src={iframeUrl}
-          title={name}
+          title={`${name} preview`}
           className="w-full h-full border-0 opacity-90 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
           loading="lazy"
           referrerPolicy="no-referrer"
@@ -43,6 +43,7 @@ const TemplateCard = ({ slug, name, description, tags, iframeUrl, badge }) => {
       <div className="flex flex-col flex-grow p-6">
         <Link
           to={`/templates/${slug}`}
+          aria-label={`${name} details`}
           className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300 underline-offset-4 hover:underline"
         >
           {name}
@@ -66,6 +67,7 @@ const TemplateCard = ({ slug, name, description, tags, iframeUrl, badge }) => {
         <div className="grid grid-cols-2 gap-3 mt-auto">
           <Link
             to={`/templates/${slug}`}
+            aria-label={`${name} template details`}
             className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-white/20 hover:bg-white/5 text-gray-300 hover:text-white transition-all duration-300 text-sm font-medium"
           >
             <Link2 size={16} />
@@ -73,6 +75,7 @@ const TemplateCard = ({ slug, name, description, tags, iframeUrl, badge }) => {
           </Link>
           <button
             onClick={handleCopy}
+            aria-label={`${name} copy template`}
             className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-black font-bold shadow-lg shadow-cyan-900/20 transition-all duration-300 text-sm hover:shadow-cyan-500/40"
           >
             <ExternalLink size={16} />

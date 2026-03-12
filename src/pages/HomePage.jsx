@@ -21,7 +21,7 @@ const HomePage = () => {
       
       <div className="min-h-screen bg-[#0a0a0f] text-white flex flex-col">
         <Header />
-        <main className="flex-grow">
+        <main id="main-content" tabIndex={-1} className="flex-grow">
           <HeroSection />
           <TemplatesGrid />
           <FeaturesSection />

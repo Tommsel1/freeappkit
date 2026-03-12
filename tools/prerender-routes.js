@@ -18,6 +18,9 @@ const staticRoutes = [
   { path: '/affiliate-disclosure', title: en.meta.affiliate.title, description: en.meta.affiliate.description },
   { path: '/impressum', title: en.meta.impressum.title, description: en.meta.impressum.description },
   { path: '/privacy', title: en.meta.privacy.title, description: en.meta.privacy.description },
+  { path: '/terms', title: en.meta.terms.title, description: en.meta.terms.description, noindex: true },
+  { path: '/cookie-policy', title: en.meta.cookiePolicy.title, description: en.meta.cookiePolicy.description, noindex: true },
+  { path: '/cookie-preferences', title: en.meta.cookiePreferences.title, description: en.meta.cookiePreferences.description, noindex: true },
 ];
 
 const templateRoutes = templateCatalog.map((template) => ({
@@ -84,13 +87,13 @@ const upsertTitle = (html, title) => {
   return html.replace('</head>', `  ${tag}\n</head>`);
 };
 
-const renderRouteHtml = (baseHtml, { path: routePath, title, description }) => {
+const renderRouteHtml = (baseHtml, { path: routePath, title, description, noindex = false }) => {
   const canonicalUrl = routePath === '/' ? `${SITE_URL}/` : `${SITE_URL}${routePath}`;
   let html = baseHtml;
 
   html = upsertTitle(html, title);
   html = upsertMetaByName(html, 'description', description);
-  html = upsertMetaByName(html, 'robots', 'index, follow');
+  html = upsertMetaByName(html, 'robots', noindex ? 'noindex, nofollow' : 'index, follow');
   html = upsertCanonical(html, canonicalUrl);
   html = upsertMetaByProperty(html, 'og:title', title);
   html = upsertMetaByProperty(html, 'og:description', description);

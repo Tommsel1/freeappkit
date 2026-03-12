@@ -1,6 +1,17 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # Canonical host: send all www requests to apex.
+  RewriteCond %{HTTP_HOST} ^www\.freeappkit\.com$ [NC]
+  RewriteRule ^ https://freeappkit.com%{REQUEST_URI} [R=301,L]
+
+  # Canonical protocol: enforce HTTPS on apex.
+  RewriteCond %{HTTP_HOST} ^freeappkit\.com$ [NC]
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://freeappkit.com%{REQUEST_URI} [R=301,L]
+
+  # SPA fallback.
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^ index.html [L]

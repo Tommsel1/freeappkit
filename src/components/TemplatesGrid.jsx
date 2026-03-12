@@ -46,10 +46,10 @@ const TemplatesGrid = () => {
       : templates.filter((template) => template.category === activeCategory);
 
   return (
-    <section id="templates" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0a0a0f] relative">
+    <section id="templates" aria-labelledby="templates-heading" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0a0a0f] relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 id="templates-heading" className="text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">
               {t('templatesGrid.title')}
             </span>
@@ -69,11 +69,17 @@ const TemplatesGrid = () => {
         </div>
 
         <div className="flex flex-col items-center mb-12">
-          <div className="flex overflow-x-auto gap-2 pb-4 w-full max-w-5xl md:justify-center px-4 no-scrollbar touch-pan-x snap-x">
+          <div
+            role="toolbar"
+            aria-label={t('templatesGrid.filterAriaLabel')}
+            className="flex overflow-x-auto gap-2 pb-4 w-full max-w-5xl md:justify-center px-4 no-scrollbar touch-pan-x snap-x"
+          >
             {filters.map((filter) => (
               <button
                 key={filter.id}
+                type="button"
                 onClick={() => setActiveCategory(filter.id)}
+                aria-pressed={activeCategory === filter.id}
                 className={`flex-shrink-0 snap-start px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
                   activeCategory === filter.id
                     ? 'bg-gradient-to-r from-cyan-500/20 to-pink-500/20 border-cyan-500/30 text-white shadow-lg shadow-cyan-500/10'

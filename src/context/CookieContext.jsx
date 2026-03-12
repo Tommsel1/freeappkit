@@ -1,6 +1,50 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 
 const CookieContext = createContext();
+const CONSENT_STORAGE_KEY = 'freeappkit-cookie-consent';
+const PREFS_STORAGE_KEY = 'freeappkit-cookie-preferences';
+const LEGACY_CONSENT_STORAGE_KEY = 'cookieConsent';
+const LEGACY_PREFS_STORAGE_KEY = 'cookiePreferences';
+const CONSENT_VERSION = '2026-03-12';
+const DEFAULT_PREFERENCES = {
+  necessary: true,
+  statistics: false,
+  marketing: false,
+};
+
+const normalizePreferences = (value) => {
+  if (!value || typeof value !== 'object') {
+    return { ...DEFAULT_PREFERENCES };
+  }
+
+  const nextPreferences = {
+    ...DEFAULT_PREFERENCES,
+  };
+
+  if (typeof value.necessary === 'boolean') {
+    nextPreferences.necessary = value.necessary;
+  }
+  if (typeof value.statistics === 'boolean') {
+    nextPreferences.statistics = value.statistics;
+  }
+  if (typeof value.marketing === 'boolean') {
+    nextPreferences.marketing = value.marketing;
+  }
+
+  // Backward compatibility with legacy key names.
+  if (typeof value.essential === 'boolean') {
+    nextPreferences.necessary = value.essential;
+  }
+  if (typeof value.analytics === 'boolean') {
+    nextPreferences.statistics = value.analytics;
+  }
+  if (typeof value.ads === 'boolean') {
+    nextPreferences.marketing = value.ads;
+  }
+
+  nextPreferences.necessary = true;
+  return nextPreferences;
+};
 
 export const useCookie = () => {
   const context = useContext(CookieContext);
@@ -11,19 +55,31 @@ export const useCookie = () => {
 };
 
 export const CookieProvider = ({ children }) => {
-  const [preferences, setPreferences] = useState({
-    essential: true,
-    analytics: false,
-    ads: false,
-  });
+  const [preferences, setPreferences] = useState(DEFAULT_PREFERENCES);
   
   const [consentGiven, setConsentGiven] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const lastTriggerRef = useRef(null);
+
+  const persistConsent = (prefs) => {
+    localStorage.setItem(CONSENT_STORAGE_KEY, 'granted');
+    localStorage.setItem(PREFS_STORAGE_KEY, JSON.stringify(prefs));
+    localStorage.setItem('freeappkit-cookie-consent-version', CONSENT_VERSION);
+    localStorage.setItem('freeappkit-cookie-consent-updated-at', new Date().toISOString());
+  };
+
+  const restoreFocus = () => {
+    const focusTarget = lastTriggerRef.current;
+    if (focusTarget && typeof focusTarget.focus === 'function' && focusTarget.isConnected) {
+      window.requestAnimationFrame(() => {
+        focusTarget.focus();
+      });
+    }
+  };
 
   useEffect(() => {
-    // Check for existing consent
-    const storedConsent = localStorage.getItem('cookieConsent');
-    const storedPreferences = localStorage.getItem('cookiePreferences');
+    const storedConsent = localStorage.getItem(CONSENT_STORAGE_KEY) || localStorage.getItem(LEGACY_CONSENT_STORAGE_KEY);
+    const storedPreferences = localStorage.getItem(PREFS_STORAGE_KEY) || localStorage.getItem(LEGACY_PREFS_STORAGE_KEY);
 
     if (storedConsent) {
       setConsentGiven(true);
@@ -31,7 +87,13 @@ export const CookieProvider = ({ children }) => {
 
     if (storedPreferences) {
       try {
-        setPreferences(JSON.parse(storedPreferences));
+        const normalized = normalizePreferences(JSON.parse(storedPreferences));
+        setPreferences(normalized);
+
+        // Persist migrated storage shape.
+        if (!localStorage.getItem(PREFS_STORAGE_KEY)) {
+          persistConsent(normalized);
+        }
       } catch (e) {
         console.error('Failed to parse cookie preferences', e);
       }
@@ -39,33 +101,40 @@ export const CookieProvider = ({ children }) => {
   }, []);
 
   const savePreferences = (newPreferences) => {
-    const prefs = { ...newPreferences, essential: true }; // Always ensure essential is true
+    const prefs = normalizePreferences(newPreferences);
     setPreferences(prefs);
     setConsentGiven(true);
     
-    localStorage.setItem('cookieConsent', 'true');
-    localStorage.setItem('cookiePreferences', JSON.stringify(prefs));
+    persistConsent(prefs);
     setIsModalOpen(false);
+    restoreFocus();
   };
 
   const acceptAll = () => {
     savePreferences({
-      essential: true,
-      analytics: true,
-      ads: true,
+      necessary: true,
+      statistics: true,
+      marketing: true,
     });
   };
 
   const rejectAll = () => {
     savePreferences({
-      essential: true,
-      analytics: false,
-      ads: false,
+      necessary: true,
+      statistics: false,
+      marketing: false,
     });
   };
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const openModal = (triggerElement = null) => {
+    lastTriggerRef.current = triggerElement || document.activeElement || null;
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    restoreFocus();
+  };
 
   return (
     <CookieContext.Provider

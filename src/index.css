@@ -22,6 +22,36 @@
   html {
     scroll-behavior: smooth;
   }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [role="button"]:focus-visible,
+  [role="switch"]:focus-visible {
+    outline: 2px solid #22d3ee;
+    outline-offset: 2px;
+  }
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.75rem;
+  z-index: 100000;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #22d3ee;
+  border-radius: 0.5rem;
+  background: #0a0a0f;
+  color: #ffffff;
+  transform: translateY(-140%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
 }
 
 @layer utilities {

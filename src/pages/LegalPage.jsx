@@ -27,7 +27,7 @@ const LegalPage = () => {
       <div className="min-h-screen bg-[#0a0a0f] text-white flex flex-col">
         <Header />
         
-        <main className="flex-grow pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <main id="main-content" tabIndex={-1} className="flex-grow pt-24 pb-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto bg-[#12121a] rounded-2xl border border-white/10 p-8 md:p-12 shadow-xl">
             <h1 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">
               {title}
