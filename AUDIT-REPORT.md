@@ -147,6 +147,11 @@ Status basis: code-level verification in this repo; external iframe functionalit
 - `dist/robots.txt`: PASS
 - `dist/sitemap.xml`: PASS (40 URLs)
 - `dist/llms.txt`: PASS (tools + guides + legal pages documented)
+- Live endpoint checks right after push: FAIL (old deployment still active)
+  - `https://freeappkit.com/` currently returns no server-rendered `<h1>`
+  - `https://www.freeappkit.com/` currently returns `200` (expected `301`)
+  - `robots.txt` is currently overridden by Cloudflare-managed rules in production
+- Direct production deploy attempt via `npx vercel --prod --yes`: FAIL (invalid Vercel token in current environment)
 
 ## 5) Recommendations
 
@@ -154,4 +159,3 @@ Status basis: code-level verification in this repo; external iframe functionalit
 2. Add automated contrast and keyboard-a11y CI checks (axe/lighthouse) to enforce >=4.5:1 across all states.
 3. Consider Vite major upgrade path to remove remaining moderate audit findings tied to `esbuild` advisory.
 4. Add optional route-level OG images for high-value template and guide pages to improve social preview CTR.
-
