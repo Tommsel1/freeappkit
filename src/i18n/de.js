@@ -1,44 +1,44 @@
 export default {
   meta: {
     home: {
-      title: "FreeAppKit – 24 Kostenlose Online-Tools: Timer, Rechner & Tracker",
-      description: "Entdecke 24 kostenlose Web-Tools – Pomodoro-Timer, Habit-Tracker, BMI-Rechner & mehr. Ohne Anmeldung, ein Klick zum Kopieren."
+      title: "Free 2026 Online-Tools & Templates | FreeAppKit",
+      description: "Kostenlose Web-Tools und Templates fuer 2026: Produktivitaet, Gesundheit, Finanzen und Design. Sofort nutzen und anpassen."
     },
     about: {
-      title: "Über FreeAppKit – Kostenlose Open-Source Web-App-Vorlagen",
-      description: "Erfahre mehr über FreeAppKit und unsere Mission, kostenlose, hochwertige Web-App-Vorlagen für alle bereitzustellen."
+      title: "Free 2026 Ueber FreeAppKit Mission | FreeAppKit",
+      description: "Erfahre, wie FreeAppKit 2026 kostenlose Web-Tools entwickelt, welche Prinzipien uns leiten und wie Nutzer die Vorlagen einsetzen."
     },
     faq: {
-      title: "FAQ – Häufige Fragen | FreeAppKit",
-      description: "Antworten auf häufige Fragen zu FreeAppKit, den Vorlagen, Lizenzen und der Nutzung."
+      title: "Free 2026 FAQ & Hilfe | FreeAppKit",
+      description: "Antworten zu Vorlagen, Lizenz, Datenschutz, Einsatz und Anpassung von FreeAppKit-Tools im Jahr 2026."
     },
     howItWorks: {
-      title: "So funktioniert's – Vorlagen in 4 Schritten",
-      description: "Lerne, wie du FreeAppKit-Vorlagen in wenigen Schritten nutzen kannst: Entdecken, Kopieren, Anpassen und Veröffentlichen."
+      title: "Free 2026 So funktioniert es | FreeAppKit",
+      description: "Lerne den 2026-Workflow: Tool waehlen, Template kopieren, Funktionen anpassen und schnell veroeffentlichen."
     },
     affiliate: {
-      title: "Affiliate-Offenlegung | FreeAppKit",
-      description: "Informationen über unsere Verwendung von Affiliate-Links und wie wir FreeAppKit finanzieren."
+      title: "Free 2026 Affiliate-Offenlegung | FreeAppKit",
+      description: "Transparente Informationen zu Affiliate-Links im Jahr 2026 und wie diese die kostenlose Bereitstellung von FreeAppKit unterstuetzen."
     },
     impressum: {
-      title: "Impressum – FreeAppKit",
-      description: "Impressum und rechtliche Angaben für FreeAppKit."
+      title: "Free 2026 Impressum & Rechtliches | FreeAppKit",
+      description: "Offizielles Impressum 2026 mit Betreiberangaben, Hosting, Aufsichtsbehoerde und rechtlichen Pflichtinformationen."
     },
     privacy: {
-      title: "Datenschutzerklärung – FreeAppKit",
-      description: "Informationen zum Datenschutz und zur Datenerfassung auf FreeAppKit."
+      title: "Free 2026 Datenschutzerklaerung DSGVO | FreeAppKit",
+      description: "Datenschutzinfos 2026 mit AdSense, Analytics, Hosting, localStorage und Betroffenenrechten nach Art. 15-21 DSGVO."
     },
     terms: {
-      title: "Nutzungsbedingungen-Übersicht – FreeAppKit",
-      description: "Technische Übersicht der rechtlichen und datenschutzbezogenen Dokumente."
+      title: "Free 2026 Rechtsdokumente Uebersicht | FreeAppKit",
+      description: "Zentrale 2026-Uebersicht fuer Impressum, Datenschutz, Affiliate-Offenlegung und Cookie-Dokumente."
     },
     cookiePolicy: {
-      title: "Cookie-Richtlinie – FreeAppKit",
-      description: "Übersicht der Cookie-Kategorien und Einwilligungssteuerung."
+      title: "Free 2026 Cookie-Richtlinie | FreeAppKit",
+      description: "Erklaerung der Cookie-Kategorien, Consent-Steuerung und Script-Ladung auf FreeAppKit im Jahr 2026."
     },
     cookiePreferences: {
-      title: "Cookie-Einstellungen – FreeAppKit",
-      description: "Cookie-Einwilligungen jederzeit verwalten und anpassen."
+      title: "Free 2026 Cookie-Einstellungen | FreeAppKit",
+      description: "Verwalte deine Consent-Einstellungen jederzeit und steuere notwendige, Statistik- und Marketing-Cookies."
     },
     legal: {
       title: "Rechtliche Informationen - FreeAppKit",
@@ -111,7 +111,7 @@ export default {
   templatesGrid: {
     title: "Unsere Vorlagen entdecken",
     subtitle: "Entdecke unsere Sammlung schöner, kostenloser Web-App-Vorlagen",
-    affiliateNotice: "Hinweis: Die „Copy Template\"-Links auf dieser Seite sind Affiliate-Links (Werbung). Wenn du ein Template kopierst und Hostinger Horizons nutzt, erhalten wir eine kleine Provision – für dich entstehen keine zusätzlichen Kosten.",
+    affiliateNotice: "Hinweis: Die „Copy Template\"-Links auf dieser Seite sind Affiliate-Links (Werbung). Wenn du ein Template kopierst und unsere Partnerplattform nutzt, erhalten wir eine kleine Provision – für dich entstehen keine zusätzlichen Kosten.",
     learnMore: "Mehr erfahren",
     showing: "{count} von {total} Vorlagen werden angezeigt",
     filterAriaLabel: "Vorlagen-Kategoriefilter",
@@ -262,10 +262,10 @@ export default {
       },
       {
         q: "Wie kopiere ich eine Vorlage?",
-        a: "Klicke auf 'Copy Template', du wirst zu Hostinger Horizons weitergeleitet, wo du sofort bearbeiten kannst."
+        a: "Klicke auf 'Copy Template', du wirst zur Partnerplattform weitergeleitet, wo du sofort bearbeiten kannst."
       },
       {
-        q: "Was ist Hostinger Horizons?",
+        q: "Was ist die Partnerplattform?",
         a: "Eine Plattform zum visuellen Erstellen und Veröffentlichen von Web-Projekten – ohne Programmierung."
       },
       {
@@ -360,7 +360,7 @@ export default {
     },
     whichLinks: {
       title: "Welche Links sind Affiliate-Links?",
-      desc: "Auf FreeAppKit sind die Buttons 'Copy Template *' in der Regel Affiliate-Links zu Hostinger Horizons."
+      desc: "Auf FreeAppKit sind die Buttons 'Copy Template *' in der Regel Affiliate-Links zur Partnerplattform."
     },
     whyUse: {
       title: "Warum wir Affiliate-Links nutzen?",
@@ -435,9 +435,9 @@ export default {
         "Widerspruch"
       ],
       retentionText: "Wir speichern Daten nur so lange wie nötig.",
-      linksText: "Affiliate-Links: Hostinger setzt Cookies bei Klick.",
+      linksText: "Affiliate-Links: Beim Klick koennen Partner Cookies setzen.",
       changesText: "Änderungen vorbehalten.",
-      contactText: "Kontakt: Thomas Schäfer, Europaring 90, 53757 Sankt Augustin, E-Mail:"
+      contactText: "Kontakt: Tom Silas Helmke, c/o Online-Impressum #4746, Europaring 90, 53757 Sankt Augustin, E-Mail:"
     }
   },
   impressum: {
@@ -489,8 +489,8 @@ export default {
     dataCollection: "Datenerfassung",
     responsibility: "Verantwortlichkeit",
     cookies: "Cookies",
-    placeholderText: "Lorem ipsum...",
-    placeholderText2: "Duis aute..."
+    placeholderText: "Dieser Abschnitt fasst rechtliche Hinweise zusammen und verweist auf die gepflegten Seiten fuer Impressum und Datenschutz.",
+    placeholderText2: "Dieser Abschnitt fasst Cookie-Nutzung, Verantwortlichkeiten und Richtlinienaenderungen transparent und verstaendlich zusammen."
   },
   accessibility: {
     skipToContent: "Zum Hauptinhalt springen"

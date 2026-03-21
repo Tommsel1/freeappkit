@@ -1,44 +1,44 @@
 export default {
   meta: {
     home: {
-      title: "FreeAppKit - Free Web App Templates | Pomodoro, Mood Tracker & More",
-      description: "Beautiful, free web app templates ready to copy and customize. Productivity tools, wellness apps, fun widgets. No coding required."
+      title: "Free 2026 Online Tools & Templates | FreeAppKit",
+      description: "Free 2026 web tools and templates for productivity, health, finance, and design. Use, copy, and customize with no signup in seconds."
     },
     about: {
-      title: "About FreeAppKit - Free Web App Templates",
-      description: "Learn about FreeAppKit's mission to provide premium, free web app templates for developers and creators. Open source, customizable, and ready to deploy."
+      title: "Free 2026 About FreeAppKit Mission | FreeAppKit",
+      description: "Learn how FreeAppKit builds free 2026-ready web tools and templates, why we focus on practical UX, and how creators use them every day."
     },
     faq: {
-      title: "FAQ - Frequently Asked Questions | FreeAppKit",
-      description: "Find answers to common questions about FreeAppKit's free web app templates, licensing, customization, deployment, and technology stack."
+      title: "Free 2026 Tools FAQ & Support | FreeAppKit",
+      description: "Get quick answers about FreeAppKit in 2026: templates, licensing, customization, deployment, privacy choices, and troubleshooting."
     },
     howItWorks: {
-      title: "How It Works - Start Building in Minutes | FreeAppKit",
-      description: "Learn how to use FreeAppKit templates in 4 easy steps: Browse, Copy, Customize, and Deploy. Start building your next web app today."
+      title: "Free 2026 How To Use Templates | FreeAppKit",
+      description: "Follow the FreeAppKit 2026 workflow: discover a tool, copy the template, customize features, and publish fast with practical build tips."
     },
     affiliate: {
-      title: "Affiliate Disclosure | FreeAppKit",
-      description: "Transparency is important to us. Learn about how we use affiliate links to support FreeAppKit and keep our templates free for everyone."
+      title: "Free 2026 Affiliate Disclosure | FreeAppKit",
+      description: "Read our 2026 affiliate disclosure, how partner links support FreeAppKit, and how we keep recommendations transparent and user-first."
     },
     impressum: {
-      title: "Impressum - FreeAppKit",
-      description: "Impressum and Legal Notice for FreeAppKit according to § 5 DDG"
+      title: "Free 2026 Impressum & Legal Notice | FreeAppKit",
+      description: "Official FreeAppKit legal notice for 2026 with operator details, hosting information, supervisory authority, and required DDG/MStV data."
     },
     privacy: {
-      title: "Privacy Policy - FreeAppKit",
-      description: "Privacy Policy and Data Protection Information for FreeAppKit"
+      title: "Free 2026 Privacy Policy DSGVO | FreeAppKit",
+      description: "Review FreeAppKit privacy details for 2026 including AdSense, Analytics, hosting, localStorage usage, and your GDPR rights."
     },
     terms: {
-      title: "Terms Overview - FreeAppKit",
-      description: "Technical index of legal and policy documents for FreeAppKit."
+      title: "Free 2026 Terms Overview | FreeAppKit",
+      description: "Open the 2026 legal document hub with direct links to Impressum, privacy policy, affiliate disclosure, and cookie documentation."
     },
     cookiePolicy: {
-      title: "Cookie Policy - FreeAppKit",
-      description: "Overview of cookie categories and consent controls used on FreeAppKit."
+      title: "Free 2026 Cookie Policy | FreeAppKit",
+      description: "Understand FreeAppKit cookie categories in 2026, when scripts are loaded, and how to control analytics and marketing consent."
     },
     cookiePreferences: {
-      title: "Cookie Preferences - FreeAppKit",
-      description: "Manage and update your cookie choices."
+      title: "Free 2026 Cookie Preferences | FreeAppKit",
+      description: "Update your FreeAppKit consent settings anytime in 2026 and control essential, statistics, and marketing preferences."
     },
     legal: {
       title: "Legal Information - FreeAppKit",
@@ -78,7 +78,7 @@ export default {
     items: [
       {
         title: "One-Click Copy",
-        description: "Copy any web app template instantly to your Hostinger account. No coding skills required - just click and customize."
+        description: "Copy any web app template instantly to your account. No coding skills required - just click and customize."
       },
       {
         title: "Fully Customizable",
@@ -111,7 +111,7 @@ export default {
   templatesGrid: {
     title: "Explore The Collection",
     subtitle: "Choose a template below and start building your next big thing.",
-    affiliateNotice: "Note: The \"Copy Template\" links on this page are affiliate links (Advertising). If you copy a template and use Hostinger Horizons, we receive a small commission – at no additional cost to you.",
+    affiliateNotice: "Note: The \"Copy Template\" links on this page are affiliate links (Advertising). If you copy a template and use our partner platform, we receive a small commission – at no additional cost to you.",
     learnMore: "Learn more",
     showing: "Showing {count} of {total} templates",
     filterAriaLabel: "Template category filters",
@@ -360,7 +360,7 @@ export default {
     },
     whichLinks: {
       title: "Which Links are Affiliate Links?",
-      desc: "On FreeAppKit, the buttons labeled \"Copy Template *\" are generally affiliate links. Specifically, when you choose to copy a template, we direct you to our partner platform (such as Hostinger Horizons) which allows you to easily generate and deploy the code. If you decide to use their hosting services, we receive a commission for the referral."
+      desc: "On FreeAppKit, the buttons labeled \"Copy Template *\" are generally affiliate links. Specifically, when you choose to copy a template, we direct you to our partner platform that allows you to easily generate and deploy the code. If you decide to use their hosting services, we receive a commission for the referral."
     },
     whyUse: {
       title: "Why We Use Affiliate Links?",
@@ -489,8 +489,8 @@ export default {
     dataCollection: "Data Collection",
     responsibility: "Responsibility",
     cookies: "Cookies",
-    placeholderText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    placeholderText2: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    placeholderText: "This section summarizes legal and contact details with practical references to the current privacy and imprint pages where maintained text is published.",
+    placeholderText2: "This section summarizes cookie handling, legal responsibilities, and policy updates in plain language to improve transparency for site visitors."
   },
   accessibility: {
     skipToContent: "Skip to main content"

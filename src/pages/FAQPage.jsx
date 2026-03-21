@@ -107,12 +107,27 @@ const FAQPage = () => {
     }
   ];
 
+  const faqStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-white font-sans selection:bg-cyan-500/30">
       <SeoHead
         title={t('meta.faq.title')}
         description={t('meta.faq.description')}
         path="/faq"
+        structuredData={faqStructuredData}
+        breadcrumbLabel="FAQ"
       />
       
       <Header />

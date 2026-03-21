@@ -86,6 +86,7 @@ const Header = () => {
 
   const navLinks = [
     { name: t('header.templates'), href: "#templates" },
+    { name: 'Guides', href: "/guides" },
     { name: t('header.about'), href: "/about" },
     { name: t('header.faq'), href: "/faq" },
     { name: t('header.howItWorks'), href: "/how-it-works" },

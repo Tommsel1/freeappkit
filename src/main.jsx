@@ -8,6 +8,10 @@ import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 import '@/index.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-    <App />
-);
+const rootElement = document.getElementById('root');
+
+if (rootElement && rootElement.hasChildNodes()) {
+  ReactDOM.hydrateRoot(rootElement, <App />);
+} else if (rootElement) {
+  ReactDOM.createRoot(rootElement).render(<App />);
+}

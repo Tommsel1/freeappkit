@@ -10,9 +10,12 @@ import ImpressumPage from '@/pages/ImpressumPage';
 import PrivacyPage from '@/pages/PrivacyPage';
 import AffiliateDisclosurePage from '@/pages/AffiliateDisclosurePage';
 import TemplateDetailPage from '@/pages/TemplateDetailPage';
+import GuidesPage from '@/pages/GuidesPage';
+import GuideDetailPage from '@/pages/GuideDetailPage';
 import TermsPage from '@/pages/TermsPage';
 import CookiePolicyPage from '@/pages/CookiePolicyPage';
 import CookiePreferencesPage from '@/pages/CookiePreferencesPage';
+import NotFoundPage from '@/pages/NotFoundPage';
 import { CookieProvider } from '@/context/CookieContext';
 import { LanguageProvider } from '@/context/LanguageContext';
 import CookieConsentBanner from '@/components/CookieConsentBanner';
@@ -34,12 +37,15 @@ function App() {
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/how-it-works" element={<HowItWorksPage />} />
             <Route path="/affiliate-disclosure" element={<AffiliateDisclosurePage />} />
+            <Route path="/guides" element={<GuidesPage />} />
+            <Route path="/guides/:slug" element={<GuideDetailPage />} />
             <Route path="/impressum" element={<ImpressumPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/cookie-policy" element={<CookiePolicyPage />} />
             <Route path="/cookie-preferences" element={<CookiePreferencesPage />} />
             <Route path="/templates/:slug" element={<TemplateDetailPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <CookieConsentBanner />
           <CookieSettingsModal />

@@ -37,6 +37,12 @@ const GoogleScripts = () => {
       ad_user_data: 'denied',
       ad_personalization: 'denied',
       analytics_storage: 'denied',
+      region: [
+        'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR',
+        'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL',
+        'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO',
+        'CH', 'GB',
+      ],
       wait_for_update: 500,
     });
   }, []);

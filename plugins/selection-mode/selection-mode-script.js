@@ -1,7 +1,6 @@
 const ALLOWED_PARENT_ORIGINS = [
-	'https://horizons.hostinger.com',
-	'https://horizons.hostinger.dev',
-	'https://horizons-frontend-local.hostinger.dev',
+	'https://builder.freeappkit.com',
+	'https://builder-preview.freeappkit.com',
 	'http://localhost:4000',
 ];
 

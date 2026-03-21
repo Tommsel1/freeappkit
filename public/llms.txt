@@ -1,59 +1,68 @@
-# FreeAppKit – 24 Free Online Web Tools
+# FreeAppKit - Free 2026 Online Tools, Templates, and Guides
 
-> FreeAppKit is a free collection of 24 beautiful, production-ready web application templates built with React and Tailwind CSS. No signup required, fully customizable, one-click copy to Hostinger Horizons.
+> FreeAppKit is a free collection of online tools and template-based web apps for productivity, health, finance, design, and utility workflows.
 
 ## About
-FreeAppKit provides free, open-source web tools for productivity, health, finance, and fun. Every template is mobile-responsive, GDPR-compliant, and ready to deploy. Based in Sankt Augustin, Germany.
+FreeAppKit publishes no-signup tools, practical guides, and template pages with legal/privacy transparency, consent controls, and SEO-friendly static route output.
 
-## Template Categories (24 Total)
+## Main Pages
+- [Home](https://freeappkit.com/): Overview of all free tools and templates.
+- [Guides](https://freeappkit.com/guides): Collection of practical how-to guides.
+- [About](https://freeappkit.com/about): Project mission and background.
+- [FAQ](https://freeappkit.com/faq): Frequently asked questions and support info.
+- [How It Works](https://freeappkit.com/how-it-works): Step-by-step usage workflow.
+- [Affiliate Disclosure](https://freeappkit.com/affiliate-disclosure): Transparency about partner links.
+- [Impressum](https://freeappkit.com/impressum): Legal notice and operator details.
+- [Privacy Policy](https://freeappkit.com/privacy): Privacy and data processing details.
+- [Terms](https://freeappkit.com/terms): Legal document index page.
+- [Cookie Policy](https://freeappkit.com/cookie-policy): Cookie categories and consent model.
+- [Cookie Preferences](https://freeappkit.com/cookie-preferences): Direct entry point to consent settings.
 
-### Productivity (3)
-- Gradient Pomodoro Timer – Focus timer with animated gradients and session tracking
-- Year Progress Bar – Visualize how much of the year has passed
-- Habit Streak Tracker – Track habits with a GitHub-style contribution graph
-
-### Health & Wellness (7)
-- Breathing Circle – Calming breathing exercise with pulsing animations
-- Emoji Mood Tracker – Track daily mood with emojis and calendar view
-- Water Intake Tracker – Stay hydrated with tracking animations
-- Sleep Calculator – Calculate optimal bedtimes based on sleep cycles
-- Ambient Sound Mixer – Mix relaxing sounds for focus and meditation
-- BMI Calculator – Calculate BMI with visual health indicators
-- Carbon Footprint Calculator – Calculate CO2 footprint, see how many Earths needed
+## Tool Categories
 
 ### Finance (4)
-- Tip Calculator – Calculate tips and split bills
-- Compound Interest Calculator – Visualize investment growth with charts
-- Mortgage Calculator – Loan payments with amortization charts
-- Salary Calculator – Net salary with tax breakdowns for Germany and USA
+- [Salary Calculator](https://freeappkit.com/templates/salary-calculator): Calculate your net salary with visual tax breakdowns for Germany and USA.
+- [Tip Calculator](https://freeappkit.com/templates/tip-calculator): Calculate tips and split bills easily.
+- [Compound Interest Calculator](https://freeappkit.com/templates/compound-interest-calculator): Visualize your investment growth with animated charts.
+- [Mortgage Calculator](https://freeappkit.com/templates/mortgage-calculator): Calculate loan payments with visual amortization charts.
+
+### Health & Wellness (7)
+- [Carbon Footprint Calculator](https://freeappkit.com/templates/carbon-footprint-calculator): Calculate your CO2 footprint and see how many Earths your lifestyle needs.
+- [Breathing Circle](https://freeappkit.com/templates/breathing-circle): Calming breathing exercise with smooth pulsing animations.
+- [Emoji Mood Tracker](https://freeappkit.com/templates/emoji-mood-tracker): Track your daily mood with emojis and calendar visualization.
+- [Water Intake Tracker](https://freeappkit.com/templates/water-intake-tracker): Stay hydrated with beautiful water tracking animations.
+- [Sleep Calculator](https://freeappkit.com/templates/sleep-calculator): Calculate optimal bedtimes based on sleep cycles.
+- [Ambient Sound Mixer](https://freeappkit.com/templates/ambient-sound-mixer): Mix relaxing sounds for focus, sleep, and meditation.
+- [BMI Calculator](https://freeappkit.com/templates/bmi-calculator): Calculate your BMI with visual health indicators.
 
 ### Fun & Games (5)
-- Decision Spinner – Customizable spin-the-wheel tool
-- 3D Dice Roller – Realistic 3D dice animations
-- Live Age Calculator – Exact age in years, days, hours, live seconds
-- Reaction Time Test – Test and improve reaction time
-- Music Taste Visualizer – Generate shareable Music DNA cards
+- [Music Taste Visualizer](https://freeappkit.com/templates/music-taste-visualizer): Select your favorite genres and generate a beautiful Music DNA card to share.
+- [Decision Spinner](https://freeappkit.com/templates/decision-spinner): Can't decide? Spin the wheel! Customizable options.
+- [3D Dice Roller](https://freeappkit.com/templates/3d-dice-roller): Roll dice with realistic 3D animations. Perfect for games!
+- [Live Age Calculator](https://freeappkit.com/templates/live-age-calculator): See your exact age in years, days, hours, and live-ticking seconds!
+- [Reaction Time Test](https://freeappkit.com/templates/reaction-time-test): Test and improve your reaction time with a simple click game.
 
-### Design & Dev (2)
-- Color Palette Generator – Generate palettes, click to copy hex codes
-- CSS Gradient Generator – Create CSS gradients with visual editor
+### Productivity (3)
+- [Gradient Pomodoro Timer](https://freeappkit.com/templates/gradient-pomodoro-timer): Beautiful focus timer with animated gradients and session tracking.
+- [Year Progress Bar](https://freeappkit.com/templates/year-progress-bar): Visualize how much of the year has passed. Perfect for sharing!
+- [Habit Streak Tracker](https://freeappkit.com/templates/habit-streak-tracker): Track habits with a GitHub-style contribution graph.
 
 ### Tools & Utilities (3)
-- Daily Inspiration – Quotes with gradient backgrounds
-- Event Countdown Timer – Shareable countdowns for events
-- Password Generator – Secure passwords with customizable options
+- [Daily Inspiration](https://freeappkit.com/templates/daily-inspiration): Beautiful quotes with stunning gradient backgrounds.
+- [Event Countdown Timer](https://freeappkit.com/templates/event-countdown-timer): Create shareable countdowns for birthdays and special events.
+- [Password Generator](https://freeappkit.com/templates/password-generator): Generate secure passwords instantly. Customize length and characters.
 
-## Pages
-- [Home](https://freeappkit.com/): Browse all 24 free web app templates
-- [About](https://freeappkit.com/about): Mission and what FreeAppKit offers
-- [FAQ](https://freeappkit.com/faq): Frequently asked questions about templates and usage
-- [How It Works](https://freeappkit.com/how-it-works): 4-step guide to using templates
-- [Affiliate Disclosure](https://freeappkit.com/affiliate-disclosure): Transparency about monetization
-- [Impressum](https://freeappkit.com/impressum): Legal notice (§ 5 DDG)
-- [Privacy Policy](https://freeappkit.com/privacy): GDPR-compliant data protection info
+### Design & Dev (2)
+- [Color Palette Generator](https://freeappkit.com/templates/color-palette-generator): Generate beautiful color palettes. Click to copy hex codes.
+- [CSS Gradient Generator](https://freeappkit.com/templates/css-gradient-generator): Create stunning CSS gradients with an intuitive visual editor.
 
-## Tech Stack
-React, Tailwind CSS, Framer Motion, Vite, React Router
+## Guides (5)
+- [Pomodoro Technique Guide](https://freeappkit.com/guides/pomodoro-technique-guide): Learn the Pomodoro Timer method in 2026 with practical session planning, focus cycles, break timing, and related free productivity tools.
+- [BMI Calculator Guide](https://freeappkit.com/guides/bmi-calculator-guide): Use a free 2026 BMI Calculator correctly, understand BMI categories, avoid common mistakes, and connect results to sustainable health habits.
+- [Password Generator Guide](https://freeappkit.com/guides/password-generator-guide): Create stronger credentials with a free 2026 Password Generator, length strategy, passphrase tips, and practical account security workflows.
+- [Compound Interest Guide](https://freeappkit.com/guides/compound-interest-guide): Plan smarter savings with a free 2026 Compound Interest Calculator, contribution scenarios, growth assumptions, and long-term forecasting tips.
+- [Carbon Footprint Guide](https://freeappkit.com/guides/carbon-footprint-guide): Use a free 2026 Carbon Footprint Calculator to estimate impact, prioritize reduction actions, and track practical sustainability improvements over time.
 
 ## Contact
+Operator: Tom Silas Helmke, c/o Online-Impressum #4746, Europaring 90, 53757 Sankt Augustin, Germany
 Email: tshfm78@gmail.com

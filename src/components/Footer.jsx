@@ -73,6 +73,14 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link
+                  to="/guides"
+                  className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05050a] rounded-sm"
+                >
+                  Guides
+                </Link>
+              </li>
+              <li>
                 <Link 
                   to="/faq"
                   className="text-[#a0a0a0] hover:text-white transition-colors duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05050a] rounded-sm"

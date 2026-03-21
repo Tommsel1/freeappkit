@@ -91,7 +91,7 @@ const TemplatesGrid = () => {
             ))}
           </div>
 
-          <div className="mt-4 text-sm text-gray-500">
+          <div className="mt-4 text-sm text-gray-500" aria-live="polite">
             {t('templatesGrid.showing', { count: filteredTemplates.length, total: templates.length })}
           </div>
         </div>

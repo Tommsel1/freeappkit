@@ -35,15 +35,15 @@ const ImpressumPage = () => {
                 {t('impressum.title')}
               </h1>
               <p className="text-gray-400 text-lg mb-8 pb-8 border-b border-white/10">
-                {t('impressum.legalNotice')}
+                Angaben gemäß § 5 TMG / § 5 DDG
               </p>
 
               <div className="space-y-8 text-gray-300">
                 <section>
-                  <h2 className="text-xl font-semibold text-white mb-4">{t('impressum.section1Title')}</h2>
+                  <h2 className="text-xl font-semibold text-white mb-4">Angaben gemäß § 5 TMG / § 5 DDG</h2>
                   <p className="leading-relaxed">
                     Tom Silas Helmke<br />
-                    c/o Online-Impressum.de #4746<br />
+                    c/o Online-Impressum #4746<br />
                     Europaring 90<br />
                     53757 Sankt Augustin<br />
                     Germany
@@ -58,12 +58,26 @@ const ImpressumPage = () => {
                 </section>
 
                 <section>
-                  <h2 className="text-xl font-semibold text-white mb-4">{t('impressum.section3Title')}</h2>
+                  <h2 className="text-xl font-semibold text-white mb-4">Verantwortlich nach § 18 Abs. 2 MStV</h2>
                   <p className="leading-relaxed">
                     Tom Silas Helmke<br />
-                    c/o Online-Impressum.de #4746<br />
+                    c/o Online-Impressum #4746<br />
                     Europaring 90<br />
                     53757 Sankt Augustin
+                  </p>
+                </section>
+
+                <section>
+                  <h2 className="text-xl font-semibold text-white mb-4">Hosting</h2>
+                  <p className="leading-relaxed">
+                    Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA
+                  </p>
+                </section>
+
+                <section>
+                  <h2 className="text-xl font-semibold text-white mb-4">Aufsichtsbehörde</h2>
+                  <p className="leading-relaxed">
+                    LDI NRW, Kavalleriestr. 2-4, 40213 Düsseldorf
                   </p>
                 </section>
 

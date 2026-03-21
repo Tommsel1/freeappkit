@@ -24,11 +24,14 @@ const PrivacyPage = () => {
     { id: 'cookies', title: t('privacyPage.sections.cookies') },
     { id: 'analytics', title: t('privacyPage.sections.analytics') },
     { id: 'adsense', title: t('privacyPage.sections.adsense') },
+    { id: 'hosting', title: '7. Hosting' },
+    { id: 'localstorage', title: '8. localStorage' },
     { id: 'rights', title: t('privacyPage.sections.rights') },
-    { id: 'retention', title: t('privacyPage.sections.retention') },
-    { id: 'links', title: t('privacyPage.sections.links') },
-    { id: 'changes', title: t('privacyPage.sections.changes') },
-    { id: 'contact', title: t('privacyPage.sections.contact') },
+    { id: 'supervisory', title: '10. Supervisory Authority' },
+    { id: 'retention', title: '11. Data Retention' },
+    { id: 'links', title: '12. Third-Party Links' },
+    { id: 'changes', title: '13. Changes to This Policy' },
+    { id: 'contact', title: '14. Contact' },
   ];
 
   return (
@@ -103,7 +106,7 @@ const PrivacyPage = () => {
                   <div className="bg-white/5 p-4 rounded-lg border border-white/10">
                     <p className="text-gray-200">
                       <strong>Tom Silas Helmke</strong><br />
-                      c/o Online-Impressum.de #4746<br />
+                      c/o Online-Impressum #4746<br />
                       Europaring 90<br />
                       53757 Sankt Augustin<br />
                       Germany<br />
@@ -148,8 +151,12 @@ const PrivacyPage = () => {
                   <p className="leading-relaxed mb-4">
                     {t('privacyPage.content.analyticsText')}
                   </p>
-                  <p className="leading-relaxed">
+                  <p className="leading-relaxed mb-4">
                     {t('privacyPage.content.analyticsAnon')}
+                  </p>
+                  <p className="leading-relaxed">
+                    Google Analytics is only activated after explicit consent. The legal basis for processing is
+                    Art. 6 Abs. 1 lit. a DSGVO.
                   </p>
                 </section>
 
@@ -162,13 +169,46 @@ const PrivacyPage = () => {
                   <p className="leading-relaxed">
                     {t('privacyPage.content.adsenseInfo')}
                   </p>
+                  <p className="leading-relaxed mt-4">
+                    We use Google AdSense with publisher ID <strong>ca-pub-4653533937550770</strong>. Ad requests and
+                    related processing happen only after consent. Legal basis: Art. 6 Abs. 1 lit. a DSGVO.
+                  </p>
                 </section>
 
-                {/* 7. Your Rights (GDPR) */}
+                {/* 7. Hosting */}
+                <section id="hosting" className="scroll-mt-24">
+                  <h2 className="text-xl font-semibold text-white mb-4">7. Hosting</h2>
+                  <p className="leading-relaxed mb-4">
+                    This website is hosted by Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA.
+                  </p>
+                  <p className="leading-relaxed">
+                    Hosting is required for secure and performant operation of the website. Legal basis:
+                    Art. 6 Abs. 1 lit. f DSGVO (legitimate interest in stable website operation).
+                  </p>
+                </section>
+
+                {/* 8. localStorage */}
+                <section id="localstorage" className="scroll-mt-24">
+                  <h2 className="text-xl font-semibold text-white mb-4">8. localStorage</h2>
+                  <p className="leading-relaxed mb-4">
+                    We store your cookie consent status and consent preferences in your browser localStorage to
+                    remember your privacy settings.
+                  </p>
+                  <p className="leading-relaxed">
+                    Stored keys include consent status, preference categories and consent version metadata. This data
+                    stays on your device unless you clear browser storage.
+                  </p>
+                </section>
+
+                {/* 9. Your Rights (GDPR) */}
                 <section id="rights" className="scroll-mt-24">
                   <h2 className="text-xl font-semibold text-white mb-4">{t('privacyPage.sections.rights')}</h2>
                   <p className="leading-relaxed mb-4">
                     {t('privacyPage.content.rightsText')}
+                  </p>
+                  <p className="leading-relaxed mb-4">
+                    You have rights under Art. 15-21 DSGVO (access, rectification, erasure, restriction, portability
+                    and objection).
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
                     <li>{t('privacyPage.content.rightsList.0')}</li>
@@ -180,7 +220,15 @@ const PrivacyPage = () => {
                   </ul>
                 </section>
 
-                {/* 8. Data Retention */}
+                {/* 10. Supervisory Authority */}
+                <section id="supervisory" className="scroll-mt-24">
+                  <h2 className="text-xl font-semibold text-white mb-4">10. Supervisory Authority</h2>
+                  <p className="leading-relaxed">
+                    Competent supervisory authority: LDI NRW, Kavalleriestr. 2-4, 40213 Dusseldorf.
+                  </p>
+                </section>
+
+                {/* 11. Data Retention */}
                 <section id="retention" className="scroll-mt-24">
                   <h2 className="text-xl font-semibold text-white mb-4">{t('privacyPage.sections.retention')}</h2>
                   <p className="leading-relaxed">
@@ -188,7 +236,7 @@ const PrivacyPage = () => {
                   </p>
                 </section>
 
-                {/* 9. Third-Party Links */}
+                {/* 12. Third-Party Links */}
                 <section id="links" className="scroll-mt-24">
                   <h2 className="text-xl font-semibold text-white mb-4">{t('privacyPage.sections.links')}</h2>
                   <p className="leading-relaxed">
@@ -196,7 +244,7 @@ const PrivacyPage = () => {
                   </p>
                 </section>
 
-                {/* 10. Changes to This Policy */}
+                {/* 13. Changes to This Policy */}
                 <section id="changes" className="scroll-mt-24">
                   <h2 className="text-xl font-semibold text-white mb-4">{t('privacyPage.sections.changes')}</h2>
                   <p className="leading-relaxed">
@@ -204,7 +252,7 @@ const PrivacyPage = () => {
                   </p>
                 </section>
 
-                {/* 11. Contact */}
+                {/* 14. Contact */}
                 <section id="contact" className="scroll-mt-24">
                   <h2 className="text-xl font-semibold text-white mb-4">{t('privacyPage.sections.contact')}</h2>
                   <p className="leading-relaxed">

@@ -5,6 +5,7 @@ import TemplatesGrid from '@/components/TemplatesGrid';
 import FeaturesSection from '@/components/FeaturesSection';
 import HowItWorks from '@/components/HowItWorks';
 import CallToAction from '@/components/CallToAction';
+import GuidesSection from '@/components/GuidesSection';
 import Footer from '@/components/Footer';
 import SeoHead from '@/components/SeoHead';
 import { useLanguage } from '@/context/LanguageContext';
@@ -24,6 +25,7 @@ const HomePage = () => {
         <main id="main-content" tabIndex={-1} className="flex-grow">
           <HeroSection />
           <TemplatesGrid />
+          <GuidesSection />
           <FeaturesSection />
           <HowItWorks />
           <CallToAction />
