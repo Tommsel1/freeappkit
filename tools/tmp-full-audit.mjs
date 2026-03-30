@@ -132,13 +132,38 @@ try {
       hasFooter = await page.$('footer').then(Boolean);
 
       if (route === '/') {
-        const filterButtons = await page.$$('[role="toolbar"] button');
+        const filterLabels = await page.$$eval(
+          '[role="toolbar"] button',
+          (buttons) => buttons.map((button) => (button.textContent || '').replace(/\s+/g, ' ').trim())
+        );
         const filterResults = [];
 
-        for (const [index, button] of filterButtons.entries()) {
-          const label = await page.evaluate((element) => (element.textContent || '').replace(/\s+/g, ' ').trim(), button);
-          await button.click();
-          await wait(450);
+        for (const [index, label] of filterLabels.entries()) {
+          const clicked = await page.evaluate((buttonIndex) => {
+            const buttons = Array.from(document.querySelectorAll('[role="toolbar"] button'));
+            const target = buttons[buttonIndex];
+
+            if (!target || target.disabled) {
+              return false;
+            }
+
+            const styles = window.getComputedStyle(target);
+            const isHidden =
+              styles.display === 'none' ||
+              styles.visibility === 'hidden' ||
+              target.getAttribute('aria-hidden') === 'true';
+
+            if (isHidden) {
+              return false;
+            }
+
+            target.click();
+            return true;
+          }, index);
+
+          if (clicked) {
+            await wait(450);
+          }
 
           const uniqueTemplateCards = await page.evaluate(() => {
             const links = Array.from(document.querySelectorAll('#templates a[href^="/templates/"]'));
@@ -146,10 +171,15 @@ try {
             return Array.from(new Set(hrefs)).length;
           });
 
-          filterResults.push({ index, label, uniqueTemplateCards });
+          filterResults.push({ index, label, clicked, uniqueTemplateCards });
         }
 
-        const languageCheck = await page.evaluate(() => {
+        const languageCheck = await page.evaluate(async () => {
+          const waitInPage = (ms) =>
+            new Promise((resolve) => {
+              setTimeout(resolve, ms);
+            });
+
           const clickByText = (text) => {
             const target = Array.from(document.querySelectorAll('header button')).find(
               (button) => (button.textContent || '').trim() === text
@@ -162,8 +192,10 @@ try {
           };
 
           const switchedToDe = clickByText('DE');
+          await waitInPage(220);
           const langAfterDe = document.documentElement.lang;
           const switchedToEn = clickByText('EN');
+          await waitInPage(220);
           const langAfterEn = document.documentElement.lang;
 
           return {
@@ -190,24 +222,79 @@ try {
           await page.waitForSelector('[role="dialog"]', { timeout: 7000 }).catch(() => null);
         }
 
-        const cookieChecks = await page.evaluate(() => {
+        const cookieChecks = await page.evaluate(async () => {
+          const waitInPage = (ms) =>
+            new Promise((resolve) => {
+              setTimeout(resolve, ms);
+            });
+
+          const isVisible = (element) => {
+            if (!element) {
+              return false;
+            }
+            const styles = window.getComputedStyle(element);
+            const rect = element.getBoundingClientRect();
+            return (
+              styles.display !== 'none' &&
+              styles.visibility !== 'hidden' &&
+              !element.hasAttribute('hidden') &&
+              rect.width > 0 &&
+              rect.height > 0
+            );
+          };
+
           const buttons = Array.from(document.querySelectorAll('button'));
           const dialog = document.querySelector('[role="dialog"]');
-          const reject = buttons.find((button) => /reject all|alle ablehnen/i.test((button.textContent || '').trim()));
-          if (reject) {
-            reject.click();
+          const rejectInBanner = buttons.find(
+            (button) =>
+              /reject all|alle ablehnen/i.test((button.textContent || '').trim()) &&
+              !button.closest('[role="dialog"]')
+          );
+
+          const rejectInDialog = buttons.find(
+            (button) =>
+              /reject all|alle ablehnen/i.test((button.textContent || '').trim()) &&
+              Boolean(button.closest('[role="dialog"]'))
+          );
+
+          let rejectClicked = false;
+          let rejectSource = 'none';
+          if (rejectInBanner) {
+            rejectInBanner.click();
+            rejectClicked = true;
+            rejectSource = 'banner';
+          } else if (rejectInDialog) {
+            rejectInDialog.click();
+            const saveButton = buttons.find(
+              (button) =>
+                /save|speichern/i.test((button.textContent || '').trim()) &&
+                Boolean(button.closest('[role="dialog"]'))
+            );
+            if (saveButton) {
+              saveButton.click();
+            }
+            rejectClicked = true;
+            rejectSource = 'dialog';
           }
 
-          const bannerStillVisible = Array.from(document.querySelectorAll('button')).some((button) =>
-            /accept all|alle akzeptieren/i.test((button.textContent || '').trim())
+          await waitInPage(2200);
+
+          const bannerRegion = Array.from(document.querySelectorAll('div[role="region"]')).find((region) =>
+            Boolean(region.querySelector('a[href="/cookie-policy"]'))
           );
+          const bannerStillVisible = isVisible(bannerRegion);
+          const bannerRegionsWithPolicyLink = Array.from(document.querySelectorAll('div[role="region"]'))
+            .filter((region) => Boolean(region.querySelector('a[href="/cookie-policy"]')))
+            .length;
 
           const consentStatus = window.localStorage.getItem('freeappkit-cookie-consent');
 
           return {
             dialogPresent: Boolean(dialog),
-            rejectClicked: Boolean(reject),
+            rejectClicked,
+            rejectSource,
             bannerStillVisible,
+            bannerRegionsWithPolicyLink,
             consentStatus,
           };
         });

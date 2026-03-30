@@ -90,7 +90,9 @@ const TemplateDetailPage = () => {
     '@type': 'SoftwareApplication',
     name: template.name,
     applicationCategory: template.category,
+    applicationSubCategory: template.tags.join(', '),
     operatingSystem: 'Web',
+    isAccessibleForFree: true,
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -98,6 +100,12 @@ const TemplateDetailPage = () => {
     },
     url: `https://freeappkit.com${canonicalPath}`,
     description: seoDescription,
+    featureList: template.tags,
+    author: {
+      '@type': 'Organization',
+      name: 'FreeAppKit',
+      url: 'https://freeappkit.com/',
+    },
   };
 
   const faqStructuredData = {
@@ -133,6 +141,7 @@ const TemplateDetailPage = () => {
         description={seoDescription}
         path={canonicalPath}
         ogType="website"
+        keywords={`${template.name.toLowerCase()},${template.tags.join(',').toLowerCase()},free ${template.category.toLowerCase()} tool,free online tool,freeappkit`}
         structuredData={[softwareApplicationStructuredData, faqStructuredData, howToStructuredData]}
         breadcrumbLabel={template.name}
       />

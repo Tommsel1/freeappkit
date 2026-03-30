@@ -10,8 +10,6 @@ import '@/index.css';
 
 const rootElement = document.getElementById('root');
 
-if (rootElement && rootElement.hasChildNodes()) {
-  ReactDOM.hydrateRoot(rootElement, <App />);
-} else if (rootElement) {
+if (rootElement) {
   ReactDOM.createRoot(rootElement).render(<App />);
 }

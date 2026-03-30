@@ -1,0 +1,248 @@
+# FreeAppKit - llms-full
+
+Generated: 2026-03-30
+Canonical: https://freeappkit.com/llms-full.txt
+Main Index: https://freeappkit.com/llms.txt
+
+## Site
+- Name: FreeAppKit
+- URL: https://freeappkit.com/
+- Description: Free online tools, calculators, trackers, and practical guides.
+- Language support: English, German
+- Access: Free, no signup required
+
+## Tools
+### salary-calculator
+- Name: Salary Calculator
+- URL: https://freeappkit.com/templates/salary-calculator
+- Category: Finance
+- Tags: Finance, Calculator, Taxes
+- Description: Calculate your net salary with visual tax breakdowns for Germany and USA.
+- External runtime: https://mediumturquoise-gnat-543373.hostingersite.com/
+
+### carbon-footprint-calculator
+- Name: Carbon Footprint Calculator
+- URL: https://freeappkit.com/templates/carbon-footprint-calculator
+- Category: Health & Wellness
+- Tags: Environment, Calculator, Sustainability
+- Description: Calculate your CO2 footprint and see how many Earths your lifestyle needs.
+- External runtime: https://ivory-antelope-449794.hostingersite.com/
+
+### music-taste-visualizer
+- Name: Music Taste Visualizer
+- URL: https://freeappkit.com/templates/music-taste-visualizer
+- Category: Fun & Games
+- Tags: Fun, Music, Creative
+- Description: Select your favorite genres and generate a beautiful Music DNA card to share.
+- External runtime: https://navajowhite-herring-780099.hostingersite.com/
+
+### gradient-pomodoro-timer
+- Name: Gradient Pomodoro Timer
+- URL: https://freeappkit.com/templates/gradient-pomodoro-timer
+- Category: Productivity
+- Tags: Productivity, Timer, Focus
+- Description: Beautiful focus timer with animated gradients and session tracking.
+- External runtime: https://blanchedalmond-otter-837451.hostingersite.com/
+
+### breathing-circle
+- Name: Breathing Circle
+- URL: https://freeappkit.com/templates/breathing-circle
+- Category: Health & Wellness
+- Tags: Wellness, Meditation, Relaxation
+- Description: Calming breathing exercise with smooth pulsing animations.
+- External runtime: https://tan-crow-607324.hostingersite.com/
+
+### emoji-mood-tracker
+- Name: Emoji Mood Tracker
+- URL: https://freeappkit.com/templates/emoji-mood-tracker
+- Category: Health & Wellness
+- Tags: Health, Tracking, Personal
+- Description: Track your daily mood with emojis and calendar visualization.
+- External runtime: https://papayawhip-fox-764100.hostingersite.com/
+
+### decision-spinner
+- Name: Decision Spinner
+- URL: https://freeappkit.com/templates/decision-spinner
+- Category: Fun & Games
+- Tags: Fun, Tools, Random
+- Description: Can't decide? Spin the wheel! Customizable options.
+- External runtime: https://darkviolet-penguin-634343.hostingersite.com/
+
+### water-intake-tracker
+- Name: Water Intake Tracker
+- URL: https://freeappkit.com/templates/water-intake-tracker
+- Category: Health & Wellness
+- Tags: Health, Fitness, Tracking
+- Description: Stay hydrated with beautiful water tracking animations.
+- External runtime: https://mintcream-goldfish-793455.hostingersite.com/
+
+### daily-inspiration
+- Name: Daily Inspiration
+- URL: https://freeappkit.com/templates/daily-inspiration
+- Category: Tools & Utilities
+- Tags: Motivation, Inspiration, Daily
+- Description: Beautiful quotes with stunning gradient backgrounds.
+- External runtime: https://lavenderblush-goat-740327.hostingersite.com/
+
+### year-progress-bar
+- Name: Year Progress Bar
+- URL: https://freeappkit.com/templates/year-progress-bar
+- Category: Productivity
+- Tags: Productivity, Stats, Viral
+- Description: Visualize how much of the year has passed. Perfect for sharing!
+- External runtime: https://teal-okapi-850532.hostingersite.com/
+
+### tip-calculator
+- Name: Tip Calculator
+- URL: https://freeappkit.com/templates/tip-calculator
+- Category: Finance
+- Tags: Finance, Tools, Calculator
+- Description: Calculate tips and split bills easily.
+- External runtime: https://navajowhite-cattle-981923.hostingersite.com/
+
+### color-palette-generator
+- Name: Color Palette Generator
+- URL: https://freeappkit.com/templates/color-palette-generator
+- Category: Design & Dev
+- Tags: Design, Colors, Creative
+- Description: Generate beautiful color palettes. Click to copy hex codes.
+- External runtime: https://peachpuff-wren-134300.hostingersite.com/
+
+### event-countdown-timer
+- Name: Event Countdown Timer
+- URL: https://freeappkit.com/templates/event-countdown-timer
+- Category: Tools & Utilities
+- Tags: Events, Timer, Countdown
+- Description: Create shareable countdowns for birthdays and special events.
+- External runtime: https://blue-loris-322272.hostingersite.com/
+
+### password-generator
+- Name: Password Generator
+- URL: https://freeappkit.com/templates/password-generator
+- Category: Tools & Utilities
+- Tags: Security, Tools, Password
+- Description: Generate secure passwords instantly. Customize length and characters.
+- External runtime: https://mediumspringgreen-gull-448059.hostingersite.com/
+
+### sleep-calculator
+- Name: Sleep Calculator
+- URL: https://freeappkit.com/templates/sleep-calculator
+- Category: Health & Wellness
+- Tags: Health, Sleep, Calculator
+- Description: Calculate optimal bedtimes based on sleep cycles.
+- External runtime: https://yellowgreen-quail-843180.hostingersite.com/
+
+### compound-interest-calculator
+- Name: Compound Interest Calculator
+- URL: https://freeappkit.com/templates/compound-interest-calculator
+- Category: Finance
+- Tags: Finance, Investment, Calculator
+- Description: Visualize your investment growth with animated charts.
+- External runtime: https://green-chinchilla-371292.hostingersite.com/
+
+### ambient-sound-mixer
+- Name: Ambient Sound Mixer
+- URL: https://freeappkit.com/templates/ambient-sound-mixer
+- Category: Health & Wellness
+- Tags: Wellness, Audio, Focus
+- Description: Mix relaxing sounds for focus, sleep, and meditation.
+- External runtime: https://mediumvioletred-donkey-940954.hostingersite.com/
+
+### mortgage-calculator
+- Name: Mortgage Calculator
+- URL: https://freeappkit.com/templates/mortgage-calculator
+- Category: Finance
+- Tags: Finance, Mortgage, Calculator
+- Description: Calculate loan payments with visual amortization charts.
+- External runtime: https://plum-dogfish-185572.hostingersite.com/
+
+### 3d-dice-roller
+- Name: 3D Dice Roller
+- URL: https://freeappkit.com/templates/3d-dice-roller
+- Category: Fun & Games
+- Tags: Gaming, Fun, Dice
+- Description: Roll dice with realistic 3D animations. Perfect for games!
+- External runtime: https://darkgreen-llama-307175.hostingersite.com/
+
+### habit-streak-tracker
+- Name: Habit Streak Tracker
+- URL: https://freeappkit.com/templates/habit-streak-tracker
+- Category: Productivity
+- Tags: Productivity, Habits, Tracking
+- Description: Track habits with a GitHub-style contribution graph.
+- External runtime: https://dodgerblue-tapir-905069.hostingersite.com/
+
+### bmi-calculator
+- Name: BMI Calculator
+- URL: https://freeappkit.com/templates/bmi-calculator
+- Category: Health & Wellness
+- Tags: Health, Fitness, Calculator
+- Description: Calculate your BMI with visual health indicators.
+- External runtime: https://mediumvioletred-quail-259606.hostingersite.com/
+
+### live-age-calculator
+- Name: Live Age Calculator
+- URL: https://freeappkit.com/templates/live-age-calculator
+- Category: Fun & Games
+- Tags: Fun, Age, Calculator
+- Description: See your exact age in years, days, hours, and live-ticking seconds!
+- External runtime: https://royalblue-wildcat-669456.hostingersite.com/
+
+### reaction-time-test
+- Name: Reaction Time Test
+- URL: https://freeappkit.com/templates/reaction-time-test
+- Category: Fun & Games
+- Tags: Fun, Games, Brain
+- Description: Test and improve your reaction time with a simple click game.
+- External runtime: https://olivedrab-bee-340705.hostingersite.com/
+
+### css-gradient-generator
+- Name: CSS Gradient Generator
+- URL: https://freeappkit.com/templates/css-gradient-generator
+- Category: Design & Dev
+- Tags: Design, Tools, CSS
+- Description: Create stunning CSS gradients with an intuitive visual editor.
+- External runtime: https://lawngreen-goshawk-330010.hostingersite.com/
+
+## Guides
+### pomodoro-technique-guide
+- Title: Pomodoro Technique Guide
+- URL: https://freeappkit.com/guides/pomodoro-technique-guide
+- Focus keyword: Pomodoro Timer
+- Meta description: Learn the Pomodoro Timer method in 2026 with practical session planning, focus cycles, break timing, and related free productivity tools.
+- Related tools: gradient-pomodoro-timer, habit-streak-tracker, year-progress-bar, ambient-sound-mixer
+
+### bmi-calculator-guide
+- Title: BMI Calculator Guide
+- URL: https://freeappkit.com/guides/bmi-calculator-guide
+- Focus keyword: BMI Calculator
+- Meta description: Use a free 2026 BMI Calculator correctly, understand BMI categories, avoid common mistakes, and connect results to sustainable health habits.
+- Related tools: bmi-calculator, water-intake-tracker, sleep-calculator, habit-streak-tracker
+
+### password-generator-guide
+- Title: Password Generator Guide
+- URL: https://freeappkit.com/guides/password-generator-guide
+- Focus keyword: Password Generator
+- Meta description: Create stronger credentials with a free 2026 Password Generator, length strategy, passphrase tips, and practical account security workflows.
+- Related tools: password-generator, css-gradient-generator, live-age-calculator, reaction-time-test
+
+### compound-interest-guide
+- Title: Compound Interest Guide
+- URL: https://freeappkit.com/guides/compound-interest-guide
+- Focus keyword: Compound Interest Calculator
+- Meta description: Plan smarter savings with a free 2026 Compound Interest Calculator, contribution scenarios, growth assumptions, and long-term forecasting tips.
+- Related tools: compound-interest-calculator, salary-calculator, mortgage-calculator, tip-calculator
+
+### carbon-footprint-guide
+- Title: Carbon Footprint Guide
+- URL: https://freeappkit.com/guides/carbon-footprint-guide
+- Focus keyword: Carbon Footprint Calculator
+- Meta description: Use a free 2026 Carbon Footprint Calculator to estimate impact, prioritize reduction actions, and track practical sustainability improvements over time.
+- Related tools: carbon-footprint-calculator, habit-streak-tracker, water-intake-tracker, year-progress-bar
+
+## Legal and Policy
+- Privacy Policy: https://freeappkit.com/privacy
+- Terms Overview: https://freeappkit.com/terms
+- Cookie Policy: https://freeappkit.com/cookie-policy
+- Affiliate Disclosure: https://freeappkit.com/affiliate-disclosure
+- Impressum: https://freeappkit.com/impressum

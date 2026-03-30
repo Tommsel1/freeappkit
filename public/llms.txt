@@ -66,3 +66,6 @@ FreeAppKit publishes no-signup tools, practical guides, and template pages with 
 ## Contact
 Operator: Tom Silas Helmke, c/o Online-Impressum #4746, Europaring 90, 53757 Sankt Augustin, Germany
 Email: tshfm78@gmail.com
+
+## AI Index
+- [Full AI Index](https://freeappkit.com/llms-full.txt): Extended machine-readable listing of all tools, tags, guides, and URLs.

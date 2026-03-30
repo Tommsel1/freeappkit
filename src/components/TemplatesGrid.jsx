@@ -8,7 +8,9 @@ import { templateCatalog } from '@/data/templateCatalog';
 const TemplatesGrid = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCategory = searchParams.get('category') || 'All';
+  const initialQuery = searchParams.get('q') || '';
   const [activeCategory, setActiveCategory] = useState(initialCategory);
+  const [searchQuery, setSearchQuery] = useState(initialQuery);
   const { t } = useLanguage();
   const templates = templateCatalog;
 
@@ -28,6 +30,19 @@ const TemplatesGrid = () => {
   ];
 
   useEffect(() => {
+    const categoryFromUrl = searchParams.get('category') || 'All';
+    const queryFromUrl = searchParams.get('q') || '';
+
+    if (categoryFromUrl !== activeCategory) {
+      setActiveCategory(categoryFromUrl);
+    }
+
+    if (queryFromUrl !== searchQuery) {
+      setSearchQuery(queryFromUrl);
+    }
+  }, [activeCategory, searchParams, searchQuery]);
+
+  useEffect(() => {
     const nextParams = new URLSearchParams(searchParams);
     if (activeCategory === 'All') {
       nextParams.delete('category');
@@ -35,15 +50,37 @@ const TemplatesGrid = () => {
       nextParams.set('category', activeCategory);
     }
 
+    const normalizedQuery = searchQuery.trim();
+    if (normalizedQuery) {
+      nextParams.set('q', normalizedQuery);
+    } else {
+      nextParams.delete('q');
+    }
+
     if (nextParams.toString() !== searchParams.toString()) {
       setSearchParams(nextParams, { replace: true });
     }
-  }, [activeCategory, searchParams, setSearchParams]);
+  }, [activeCategory, searchQuery, searchParams, setSearchParams]);
 
-  const filteredTemplates =
+  const categoryFilteredTemplates =
     activeCategory === 'All'
       ? templates
       : templates.filter((template) => template.category === activeCategory);
+
+  const normalizedQuery = searchQuery.trim().toLowerCase();
+  const filteredTemplates = normalizedQuery
+    ? categoryFilteredTemplates.filter((template) => {
+        const haystack = [
+          template.name,
+          template.description,
+          template.category,
+          ...(template.tags || []),
+        ]
+          .join(' ')
+          .toLowerCase();
+        return haystack.includes(normalizedQuery);
+      })
+    : categoryFilteredTemplates;
 
   return (
     <section id="templates" aria-labelledby="templates-heading" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0a0a0f] relative">
@@ -69,6 +106,31 @@ const TemplatesGrid = () => {
         </div>
 
         <div className="flex flex-col items-center mb-12">
+          <div className="w-full max-w-3xl mb-6 px-4">
+            <label htmlFor="template-search" className="sr-only">
+              {t('templatesGrid.searchLabel')}
+            </label>
+            <div className="relative">
+              <input
+                id="template-search"
+                type="search"
+                value={searchQuery}
+                onChange={(event) => setSearchQuery(event.target.value)}
+                placeholder={t('templatesGrid.searchPlaceholder')}
+                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 pr-24 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/60"
+              />
+              {searchQuery ? (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg bg-white/10 px-3 py-1.5 text-xs text-gray-200 hover:bg-white/15 transition-colors"
+                >
+                  {t('templatesGrid.clearSearch')}
+                </button>
+              ) : null}
+            </div>
+          </div>
+
           <div
             role="toolbar"
             aria-label={t('templatesGrid.filterAriaLabel')}
@@ -115,6 +177,12 @@ const TemplatesGrid = () => {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {filteredTemplates.length === 0 ? (
+          <p className="text-center text-gray-400 mt-8">
+            {t('templatesGrid.noResults')}
+          </p>
+        ) : null}
       </div>
     </section>
   );

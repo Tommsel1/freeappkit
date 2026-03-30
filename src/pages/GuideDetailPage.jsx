@@ -69,13 +69,37 @@ const GuideDetailPage = () => {
     })),
   };
 
+  const articleStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: guide.title,
+    description: guide.metaDescription,
+    mainEntityOfPage: `https://freeappkit.com${path}`,
+    inLanguage: 'en',
+    author: {
+      '@type': 'Organization',
+      name: 'FreeAppKit',
+      url: 'https://freeappkit.com/',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'FreeAppKit',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://freeappkit.com/logo.png',
+      },
+    },
+    about: [guide.keyword, 'free online tools', 'how-to guide'],
+  };
+
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-white flex flex-col">
       <SeoHead
         title={guide.metaTitle}
         description={guide.metaDescription}
         path={path}
-        structuredData={[faqStructuredData, howToStructuredData]}
+        keywords={`${guide.keyword.toLowerCase()},how to use ${guide.keyword.toLowerCase()},free guide,freeappkit guide,step by step guide`}
+        structuredData={[articleStructuredData, faqStructuredData, howToStructuredData]}
         breadcrumbLabel={guide.title}
       />
 

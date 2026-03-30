@@ -23,6 +23,8 @@ const staticEntries = [
   { path: '/terms', priority: '0.3', changefreq: 'monthly' },
   { path: '/cookie-policy', priority: '0.3', changefreq: 'monthly' },
   { path: '/cookie-preferences', priority: '0.3', changefreq: 'monthly' },
+  { path: '/llms.txt', priority: '0.2', changefreq: 'monthly' },
+  { path: '/llms-full.txt', priority: '0.2', changefreq: 'monthly' },
 ];
 
 const templateEntries = templateCatalog.map((template) => ({

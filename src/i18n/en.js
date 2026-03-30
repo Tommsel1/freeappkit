@@ -114,6 +114,10 @@ export default {
     affiliateNotice: "Note: The \"Copy Template\" links on this page are affiliate links (Advertising). If you copy a template and use our partner platform, we receive a small commission – at no additional cost to you.",
     learnMore: "Learn more",
     showing: "Showing {count} of {total} templates",
+    searchLabel: "Search templates",
+    searchPlaceholder: "Search templates by name, category, or tag...",
+    clearSearch: "Clear",
+    noResults: "No templates match this search. Try a broader keyword or switch category.",
     filterAriaLabel: "Template category filters",
     filters: {
       all: "All",

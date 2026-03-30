@@ -7,6 +7,8 @@ import { guideCatalog } from '../src/data/guideCatalog.js';
 
 const SITE_URL = 'https://freeappkit.com';
 const outputPath = path.join(process.cwd(), 'public', 'llms.txt');
+const fullOutputPath = path.join(process.cwd(), 'public', 'llms-full.txt');
+const generatedDate = new Date().toISOString().slice(0, 10);
 
 const categories = templateCatalog.reduce((accumulator, template) => {
   if (!accumulator[template.category]) {
@@ -64,6 +66,55 @@ lines.push('');
 lines.push('## Contact');
 lines.push('Operator: Tom Silas Helmke, c/o Online-Impressum #4746, Europaring 90, 53757 Sankt Augustin, Germany');
 lines.push('Email: tshfm78@gmail.com');
+lines.push('');
+lines.push('## AI Index');
+lines.push(`- [Full AI Index](${SITE_URL}/llms-full.txt): Extended machine-readable listing of all tools, tags, guides, and URLs.`);
 
 fs.writeFileSync(outputPath, `${lines.join('\n')}\n`, 'utf8');
-console.log(`llms.txt generated with ${templateCatalog.length} tools and ${guideCatalog.length} guides.`);
+
+const fullLines = [];
+fullLines.push('# FreeAppKit - llms-full');
+fullLines.push('');
+fullLines.push(`Generated: ${generatedDate}`);
+fullLines.push(`Canonical: ${SITE_URL}/llms-full.txt`);
+fullLines.push(`Main Index: ${SITE_URL}/llms.txt`);
+fullLines.push('');
+fullLines.push('## Site');
+fullLines.push('- Name: FreeAppKit');
+fullLines.push('- URL: https://freeappkit.com/');
+fullLines.push('- Description: Free online tools, calculators, trackers, and practical guides.');
+fullLines.push('- Language support: English, German');
+fullLines.push('- Access: Free, no signup required');
+fullLines.push('');
+fullLines.push('## Tools');
+templateCatalog.forEach((template) => {
+  fullLines.push(`### ${template.slug}`);
+  fullLines.push(`- Name: ${template.name}`);
+  fullLines.push(`- URL: ${SITE_URL}/templates/${template.slug}`);
+  fullLines.push(`- Category: ${template.category}`);
+  fullLines.push(`- Tags: ${(template.tags || []).join(', ')}`);
+  fullLines.push(`- Description: ${template.description}`);
+  fullLines.push(`- External runtime: ${template.iframeUrl}`);
+  fullLines.push('');
+});
+
+fullLines.push('## Guides');
+guideCatalog.forEach((guide) => {
+  fullLines.push(`### ${guide.slug}`);
+  fullLines.push(`- Title: ${guide.title}`);
+  fullLines.push(`- URL: ${SITE_URL}/guides/${guide.slug}`);
+  fullLines.push(`- Focus keyword: ${guide.keyword}`);
+  fullLines.push(`- Meta description: ${guide.metaDescription}`);
+  fullLines.push(`- Related tools: ${(guide.relatedTemplates || []).join(', ')}`);
+  fullLines.push('');
+});
+
+fullLines.push('## Legal and Policy');
+fullLines.push(`- Privacy Policy: ${SITE_URL}/privacy`);
+fullLines.push(`- Terms Overview: ${SITE_URL}/terms`);
+fullLines.push(`- Cookie Policy: ${SITE_URL}/cookie-policy`);
+fullLines.push(`- Affiliate Disclosure: ${SITE_URL}/affiliate-disclosure`);
+fullLines.push(`- Impressum: ${SITE_URL}/impressum`);
+
+fs.writeFileSync(fullOutputPath, `${fullLines.join('\n')}\n`, 'utf8');
+console.log(`llms.txt and llms-full.txt generated with ${templateCatalog.length} tools and ${guideCatalog.length} guides.`);

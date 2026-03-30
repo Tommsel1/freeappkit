@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 
 const SITE_URL = 'https://freeappkit.com';
 const DEFAULT_IMAGE = 'https://freeappkit.com/og-image.png';
+const SITE_NAME = 'FreeAppKit';
 
 const toCanonicalUrl = (path = '/') => {
   if (!path || path === '/') {
@@ -44,10 +45,16 @@ const SeoHead = ({
   noindex = false,
   ogType = 'website',
   image = DEFAULT_IMAGE,
+  imageAlt = 'FreeAppKit preview image',
+  keywords = '',
   structuredData = [],
   breadcrumbLabel = '',
 }) => {
   const canonicalUrl = toCanonicalUrl(path);
+  const inferredLanguage =
+    typeof document !== 'undefined' && document.documentElement?.lang
+      ? document.documentElement.lang
+      : 'en';
   const breadcrumbItems = buildBreadcrumbList(path, breadcrumbLabel);
   const breadcrumbStructuredData =
     breadcrumbItems.length > 1
@@ -63,7 +70,22 @@ const SeoHead = ({
         }
       : null;
 
+  const webPageStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: title,
+    description,
+    url: canonicalUrl,
+    inLanguage: inferredLanguage,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: SITE_NAME,
+      url: `${SITE_URL}/`,
+    },
+  };
+
   const structuredDataArray = [
+    webPageStructuredData,
     ...(
       Array.isArray(structuredData)
         ? structuredData
@@ -78,18 +100,23 @@ const SeoHead = ({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {keywords ? <meta name="keywords" content={keywords} /> : null}
       <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+      <meta name="language" content={inferredLanguage} />
       <link rel="canonical" href={canonicalUrl} />
+      <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
+      <meta property="og:image:alt" content={imageAlt} />
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={canonicalUrl} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={image} />
+      <meta property="twitter:image:alt" content={imageAlt} />
       {structuredDataArray.map((item, index) => (
         <script key={`jsonld-${index}`} type="application/ld+json">
           {JSON.stringify(item)}

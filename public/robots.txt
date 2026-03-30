@@ -13,4 +13,8 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
+# AI index files
+Allow: /llms.txt
+Allow: /llms-full.txt
+
 Sitemap: https://freeappkit.com/sitemap.xml

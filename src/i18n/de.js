@@ -114,6 +114,10 @@ export default {
     affiliateNotice: "Hinweis: Die „Copy Template\"-Links auf dieser Seite sind Affiliate-Links (Werbung). Wenn du ein Template kopierst und unsere Partnerplattform nutzt, erhalten wir eine kleine Provision – für dich entstehen keine zusätzlichen Kosten.",
     learnMore: "Mehr erfahren",
     showing: "{count} von {total} Vorlagen werden angezeigt",
+    searchLabel: "Vorlagen suchen",
+    searchPlaceholder: "Nach Name, Kategorie oder Tag suchen...",
+    clearSearch: "Zuruecksetzen",
+    noResults: "Keine Vorlage passt zur Suche. Versuche ein allgemeineres Stichwort oder eine andere Kategorie.",
     filterAriaLabel: "Vorlagen-Kategoriefilter",
     filters: {
       all: "Alle",
