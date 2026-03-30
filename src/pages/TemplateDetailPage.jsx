@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ExternalLink, ArrowLeft } from 'lucide-react';
 import Header from '@/components/Header';
@@ -47,6 +47,34 @@ const TemplateDetailPage = () => {
   const { slug = '' } = useParams();
   const { t } = useLanguage();
   const template = getTemplateBySlug(slug);
+  const [showInlinePreview, setShowInlinePreview] = useState(false);
+  const [embedLoading, setEmbedLoading] = useState(false);
+  const [embedReloadToken, setEmbedReloadToken] = useState(0);
+
+  useEffect(() => {
+    setShowInlinePreview(false);
+    setEmbedLoading(false);
+  }, [slug]);
+
+  const handleIframeLoad = () => {
+    setEmbedLoading(false);
+  };
+
+  const openInlinePreview = () => {
+    setShowInlinePreview(true);
+    setEmbedLoading(true);
+    setEmbedReloadToken((current) => current + 1);
+  };
+
+  const retryInlinePreview = () => {
+    setEmbedLoading(true);
+    setEmbedReloadToken((current) => current + 1);
+  };
+
+  const hideInlinePreview = () => {
+    setShowInlinePreview(false);
+    setEmbedLoading(false);
+  };
 
   if (!template) {
     return (
@@ -159,15 +187,93 @@ const TemplateDetailPage = () => {
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 items-start">
-            <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#12121a] shadow-xl">
-              <iframe
-                src={template.iframeUrl}
-                title={template.name}
-                className="w-full min-h-[640px] border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer"
-                sandbox="allow-scripts allow-same-origin"
-              />
+            <div
+              className="rounded-2xl overflow-hidden border border-white/10 bg-[#12121a] shadow-xl relative"
+              data-embed-state={showInlinePreview ? (embedLoading ? 'loading' : 'preview') : 'direct'}
+            >
+              {!showInlinePreview ? (
+                <div
+                  className="min-h-[640px] p-8 flex flex-col items-center justify-center text-center"
+                  data-embed-fallback="true"
+                >
+                  <h2 className="text-2xl font-bold text-white mb-3">
+                    {t('templatePage.embedFallbackTitle')}
+                  </h2>
+                  <p className="text-gray-300 max-w-xl leading-relaxed mb-6">
+                    {t('templatePage.embedFallbackDescription')}
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-center gap-3">
+                    <a
+                      href={template.iframeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-cyan-700 hover:bg-cyan-600 text-white border-0 text-sm font-semibold transition-colors"
+                      data-embed-open-tool="true"
+                    >
+                      <ExternalLink size={16} />
+                      {t('templatePage.openToolDirect')}
+                    </a>
+                    <button
+                      type="button"
+                      onClick={openInlinePreview}
+                      className="inline-flex items-center justify-center px-5 py-3 rounded-lg border border-white/20 hover:bg-white/5 text-gray-200 text-sm font-medium transition-colors"
+                    >
+                      {t('templatePage.tryInlinePreview')}
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="relative">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-4 py-3 border-b border-white/10 bg-[#0a0a0f]/70">
+                    <p className="text-sm text-gray-300">{t('templatePage.inlinePreviewHint')}</p>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <a
+                        href={template.iframeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-cyan-700 hover:bg-cyan-600 text-white text-xs font-semibold transition-colors"
+                        data-embed-open-tool="true"
+                      >
+                        <ExternalLink size={14} />
+                        {t('templatePage.openToolDirect')}
+                      </a>
+                      <button
+                        type="button"
+                        onClick={retryInlinePreview}
+                        className="inline-flex items-center justify-center px-3 py-2 rounded-lg border border-white/20 hover:bg-white/5 text-gray-200 text-xs font-medium transition-colors"
+                      >
+                        {t('templatePage.retryEmbed')}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={hideInlinePreview}
+                        className="inline-flex items-center justify-center px-3 py-2 rounded-lg border border-white/20 hover:bg-white/5 text-gray-200 text-xs font-medium transition-colors"
+                      >
+                        {t('templatePage.hideInlinePreview')}
+                      </button>
+                    </div>
+                  </div>
+                  <iframe
+                    key={`${template.slug}-${embedReloadToken}`}
+                    src={template.iframeUrl}
+                    title={template.name}
+                    className="w-full min-h-[640px] border-0"
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-modals allow-downloads"
+                    allow="clipboard-read; clipboard-write; fullscreen"
+                    onLoad={handleIframeLoad}
+                  />
+                  {embedLoading ? (
+                    <div className="absolute inset-0 bg-[#12121a]/80 backdrop-blur-sm flex items-center justify-center pointer-events-none">
+                      <div className="text-center px-6">
+                        <p className="text-white font-semibold mb-2">{t('templatePage.embedLoadingTitle')}</p>
+                        <p className="text-gray-300 text-sm">{t('templatePage.embedLoadingDescription')}</p>
+                      </div>
+                    </div>
+                  ) : null}
+                </div>
+              )}
             </div>
 
             <aside className="bg-[#12121a] border border-white/10 rounded-2xl p-6 md:p-8">

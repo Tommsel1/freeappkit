@@ -346,14 +346,24 @@ try {
           }))
         );
 
+        const expectedUrl = template?.iframeUrl || '';
+        const hasDirectLaunchLink = linkTargets.some((link) =>
+          Boolean(expectedUrl && link.href === expectedUrl && /(live demo|copy template)/i.test(link.text))
+        );
+        const iframeBlocked =
+          Boolean(frameUrl && frameUrl.startsWith('chrome-error://')) ||
+          /is blocked/i.test(frameH1);
+
         templateEmbed = {
-          expectedUrl: template?.iframeUrl || '',
+          expectedUrl,
           iframeMeta,
           frameReady,
           frameUrl,
           frameTitle,
           frameH1,
           titleMatchesTemplate: template ? titleMatchesTemplate(template, frameTitle, frameH1) : false,
+          iframeBlocked,
+          hasDirectLaunchLink,
           linkTargets,
         };
       }
@@ -529,9 +539,11 @@ const templateEmbedIssues = routeResults
   .filter((result) => {
     const embed = result.templateEmbed;
     if (!embed) return true;
-    if (!embed.iframeMeta || !embed.frameReady) return true;
+    if (!embed.hasDirectLaunchLink) return true;
+    // Direct-open mode is valid even when no iframe preview is rendered.
+    if (!embed.iframeMeta || !embed.frameReady) return false;
     if (embed.expectedUrl && embed.iframeMeta.src !== embed.expectedUrl) return true;
-    if (!embed.titleMatchesTemplate) return true;
+    if (!embed.titleMatchesTemplate && !embed.iframeBlocked) return true;
     return false;
   });
 
