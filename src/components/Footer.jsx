@@ -43,9 +43,9 @@ const Footer = () => {
           
           {/* COLUMN 1 - Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent inline-block">
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent inline-block">
               FreeAppKit
-            </h3>
+            </h2>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               {t('footer.description')}
             </p>
@@ -53,7 +53,7 @@ const Footer = () => {
 
           {/* COLUMN 2 - Templates */}
           <div className="space-y-6">
-            <h4 className="text-white font-semibold text-lg">{t('footer.columns.templates')}</h4>
+            <h3 className="text-white font-semibold text-lg">{t('footer.columns.templates')}</h3>
             <ul className="space-y-3">
               <li>
                 <a 
@@ -110,7 +110,7 @@ const Footer = () => {
 
           {/* COLUMN 3 - Legal */}
           <div className="space-y-6">
-            <h4 className="text-white font-semibold text-lg">{t('footer.columns.legal')}</h4>
+            <h3 className="text-white font-semibold text-lg">{t('footer.columns.legal')}</h3>
             <ul className="space-y-3">
               <li>
                 <Link 
@@ -175,16 +175,16 @@ const Footer = () => {
         </div>
 
         {/* SEO Text Block */}
-        <p className="text-center text-gray-500 text-xs max-w-2xl mx-auto mb-8">
+        <p className="text-center text-gray-400 text-xs max-w-2xl mx-auto mb-8">
           {t('footer.seoText')}
         </p>
 
         {/* Footer Bottom */}
         <div className="border-t border-white/[0.08] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-400 text-sm">
             {t('footer.rights')}
           </p>
-          <div className="flex items-center gap-2 text-sm text-gray-500">
+          <div className="flex items-center gap-2 text-sm text-gray-400">
             <span>{t('footer.madeWith')}</span>
             <Heart aria-hidden="true" className="text-red-500 fill-red-500" size={14} />
             <span>{t('footer.inGermany')}</span>

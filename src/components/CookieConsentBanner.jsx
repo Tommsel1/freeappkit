@@ -61,7 +61,7 @@ const CookieConsentBanner = () => {
                 </Button>
                 <Button 
                   onClick={acceptAll}
-                  className="flex-1 md:flex-none bg-cyan-500 hover:bg-cyan-600 text-white border-0 order-1 md:order-3"
+                  className="flex-1 md:flex-none bg-cyan-700 hover:bg-cyan-600 text-white border-0 order-1 md:order-3"
                 >
                   {t('cookieBanner.acceptAll')}
                 </Button>

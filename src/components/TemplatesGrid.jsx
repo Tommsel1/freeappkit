@@ -148,12 +148,12 @@ const TemplatesGrid = () => {
                     : 'bg-white/5 border-white/10 text-gray-400 hover:text-white hover:bg-white/10'
                 }`}
               >
-                {filter.label} <span className="opacity-60 ml-1">({filter.count})</span>
+                {filter.label} <span className="opacity-80 text-gray-300 ml-1">({filter.count})</span>
               </button>
             ))}
           </div>
 
-          <div className="mt-4 text-sm text-gray-500" aria-live="polite">
+          <div className="mt-4 text-sm text-gray-400" aria-live="polite">
             {t('templatesGrid.showing', { count: filteredTemplates.length, total: templates.length })}
           </div>
         </div>

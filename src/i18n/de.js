@@ -112,7 +112,7 @@ export default {
     title: "Unsere Vorlagen entdecken",
     subtitle: "Entdecke unsere Sammlung schöner, kostenloser Web-App-Vorlagen",
     affiliateNotice: "Hinweis: Die „Copy Template\"-Links auf dieser Seite sind Affiliate-Links (Werbung). Wenn du ein Template kopierst und unsere Partnerplattform nutzt, erhalten wir eine kleine Provision – für dich entstehen keine zusätzlichen Kosten.",
-    learnMore: "Mehr erfahren",
+    learnMore: "Affiliate-Offenlegung lesen",
     showing: "{count} von {total} Vorlagen werden angezeigt",
     searchLabel: "Vorlagen suchen",
     searchPlaceholder: "Nach Name, Kategorie oder Tag suchen...",
@@ -179,7 +179,7 @@ export default {
   cookieBanner: {
     title: "Wir respektieren deine Privatsphäre",
     description: "Wir verwenden Cookies, um dein Surferlebnis zu verbessern. Statistik hilft uns bei der Nutzungsauswertung, Marketing ermöglicht werbebasierte Finanzierung.",
-    learnMore: "Mehr erfahren",
+    learnMore: "Cookie-Richtlinie lesen",
     customize: "Anpassen",
     rejectAll: "Alle ablehnen",
     acceptAll: "Alle akzeptieren"

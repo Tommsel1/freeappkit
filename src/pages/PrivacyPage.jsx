@@ -62,7 +62,7 @@ const PrivacyPage = () => {
               <p className="text-gray-400 text-lg mb-2">
                 {t('privacyPage.subtitle')}
               </p>
-              <p className="text-sm text-gray-500 mb-8 pb-8 border-b border-white/10">
+              <p className="text-sm text-gray-400 mb-8 pb-8 border-b border-white/10">
                 {t('privacyPage.lastUpdated')}
               </p>
 
@@ -110,7 +110,7 @@ const PrivacyPage = () => {
                       Europaring 90<br />
                       53757 Sankt Augustin<br />
                       Germany<br />
-                      Email: <a href="mailto:tshfm78@gmail.com" className="text-cyan-400 hover:text-cyan-300">tshfm78@gmail.com</a>
+                      Email: <a href="mailto:tshfm78@gmail.com" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 decoration-cyan-300/70">tshfm78@gmail.com</a>
                     </p>
                   </div>
                 </section>
@@ -256,7 +256,7 @@ const PrivacyPage = () => {
                 <section id="contact" className="scroll-mt-24">
                   <h2 className="text-xl font-semibold text-white mb-4">{t('privacyPage.sections.contact')}</h2>
                   <p className="leading-relaxed">
-                    {t('privacyPage.content.contactText')} <a href="mailto:tshfm78@gmail.com" className="text-cyan-400 hover:text-cyan-300">tshfm78@gmail.com</a>.
+                    {t('privacyPage.content.contactText')} <a href="mailto:tshfm78@gmail.com" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 decoration-cyan-300/70">tshfm78@gmail.com</a>.
                   </p>
                 </section>
 

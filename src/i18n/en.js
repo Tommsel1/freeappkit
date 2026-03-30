@@ -112,7 +112,7 @@ export default {
     title: "Explore The Collection",
     subtitle: "Choose a template below and start building your next big thing.",
     affiliateNotice: "Note: The \"Copy Template\" links on this page are affiliate links (Advertising). If you copy a template and use our partner platform, we receive a small commission – at no additional cost to you.",
-    learnMore: "Learn more",
+    learnMore: "Read affiliate disclosure",
     showing: "Showing {count} of {total} templates",
     searchLabel: "Search templates",
     searchPlaceholder: "Search templates by name, category, or tag...",
@@ -179,7 +179,7 @@ export default {
   cookieBanner: {
     title: "We value your privacy",
     description: "We use cookies to enhance your experience. Statistics help us understand usage, and marketing supports ad-based monetization.",
-    learnMore: "Learn more",
+    learnMore: "Read cookie policy",
     customize: "Customize",
     rejectAll: "Reject All",
     acceptAll: "Accept All"

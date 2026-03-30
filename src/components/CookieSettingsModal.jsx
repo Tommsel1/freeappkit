@@ -226,7 +226,7 @@ const CookieSettingsModal = () => {
                   </Button>
                   <Button 
                     onClick={handleSave}
-                    className="flex-1 sm:flex-none bg-cyan-500 hover:bg-cyan-600 text-white border-0"
+                    className="flex-1 sm:flex-none bg-cyan-700 hover:bg-cyan-600 text-white border-0"
                   >
                     {t('cookieModal.save')}
                   </Button>

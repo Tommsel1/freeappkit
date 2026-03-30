@@ -204,7 +204,7 @@ const TemplateDetailPage = () => {
                 </a>
               </div>
 
-              <p className="text-xs text-gray-500 mt-4">
+              <p className="text-xs text-gray-400 mt-4">
                 {t('templatePage.affiliateNote')}
               </p>
             </aside>

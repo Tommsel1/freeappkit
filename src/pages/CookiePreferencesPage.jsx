@@ -37,7 +37,7 @@ const CookiePreferencesPage = () => {
           <button
             type="button"
             onClick={(event) => openModal(event.currentTarget)}
-            className="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 text-white font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#12121a]"
+            className="px-4 py-2 rounded-lg bg-cyan-700 hover:bg-cyan-600 text-white font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#12121a]"
           >
             {t('cookiePreferencesPage.openButton')}
           </button>
