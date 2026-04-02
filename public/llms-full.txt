@@ -1,6 +1,6 @@
 # FreeAppKit - llms-full
 
-Generated: 2026-03-30
+Generated: 2026-04-02
 Canonical: https://freeappkit.com/llms-full.txt
 Main Index: https://freeappkit.com/llms.txt
 

@@ -126,7 +126,10 @@ async function prerender() {
       await page.waitForSelector('#main-content, main, h1', { timeout: 20000 }).catch(() => null);
       await wait(450);
 
-      const html = await page.content();
+      let html = await page.content();
+      // Remove <noscript> blocks from pre-rendered HTML to avoid duplicate h1 tags.
+      // The pre-rendered content already serves crawlers that cannot run JS.
+      html = html.replace(/<noscript[\s\S]*?<\/noscript>/gi, '');
       writeRouteHtml(routePath, html);
       await page.close();
       console.log(`Prerendered ${routePath}`);

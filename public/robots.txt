@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /src/
+Disallow: /node_modules/
+Allow: /llms.txt
+Allow: /llms-full.txt
 
 User-agent: GPTBot
 Allow: /
@@ -12,9 +17,5 @@ Allow: /
 
 User-agent: Bytespider
 Allow: /
-
-# AI index files
-Allow: /llms.txt
-Allow: /llms-full.txt
 
 Sitemap: https://freeappkit.com/sitemap.xml
